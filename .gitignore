@@ -1,6 +1,6 @@
 # Drupal & Composer
 /vendor/
-/sites/default/files/
+/web/sites/default/files/
 /web/sites/default/settings.php
 /web/sites/default/settings.local.php
 

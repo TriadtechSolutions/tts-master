@@ -2,3 +2,167 @@
  * @file
  * Subtheme specific CSS.
  */
+
+ * {
+    margin: 0;
+    padding: 0;
+    font-family: 'poltawski nowy';
+}
+
+@font-face {
+  font-family: 'Poltawski Nowy';
+  src: url('../fonts/poltawskinowy-variablefont_wght-webfont.woff2') format('woff2'),
+       url('../fonts/poltawskinowy-variablefont_wght-webfont.woff') format('woff'),
+       url('../fonts/PoltawskiNowy-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Poltawski Nowy', sans-serif;
+}
+
+
+:root {
+    --bs-primary: #EE8D5A;
+    --bs-secondary: #e53637;
+    --secondary-color-green: #666666;
+    --secondary-color-sandal: #FAF3ED;
+    --secondary-color-black: #111111;
+    --footer-text-color: rgba(255, 255, 255, 0.55);
+}
+
+h1 {
+    font-size: 35px;
+    font-weight: 800;
+    line-height: 47px;
+    font-family: 'poltawski nowy';
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 40px;
+    font-family: 'poltawski nowy';
+}
+
+h3 {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 36px;
+    font-family: 'poltawski nowy';
+}
+
+h4 {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 30px;
+    font-family: 'poltawski nowy';
+}
+
+h5 {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 25px;
+    font-family: 'poltawski nowy';
+}
+
+h6 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 23px;
+    font-family: 'poltawski nowy';
+}
+
+p {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 25px;
+    color: var(--secondary-color-green);
+}
+
+p span {
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'poltawski nowy';
+    line-height: 28px;
+    color: var(--bs-secondary);
+}
+
+#page-wrapper{
+    margin-top: -20px;
+}
+
+footer {
+    padding-top: 100px;
+    background-color: var(--secondary-color-black);
+}
+
+.btn {
+    width: 185px;
+    height: 62px;
+    padding: 16px 0;
+    border: 2px solid var(--secondary-color-black);
+    border-radius: 0;
+    justify-content: center;
+    font-size: 17px;
+    font-weight: 500;
+    font-family: 'Rubik', sans-serif;
+    text-transform: uppercase;
+    background-color: transparent;
+    position: relative;
+}
+
+.quarter {
+    width: 20px;
+    height: 20px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 100%;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    background: var(--secondary-color-black);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.btn-outline-primary {
+    color: var(--secondary-color-black);
+    border: 2px solid #000;
+    background-image: linear-gradient(300deg, #000 50%, transparent 50%);
+    background-size: 500px;
+    background-repeat: no-repeat;
+    background-position: 20%;
+    transition: background 300ms ease-in-out;
+}
+
+.btn-outline-primary:hover {
+    background-position: 100%;
+    color: #fff;
+    border: 2px solid #000;
+    background-color: transparent;
+}
+
+.btn-outline-primary:focus {
+    box-shadow: none;
+}
+
+.btn-outline-primary:active {
+    background-color: transparent;
+    border: none;
+}
+
+.outline-primary:focus,
+.btn-outline-primary.active:focus,
+.btn-outline-primary.dropdown-toggle.show:focus,
+.btn-outline-primary:active:focus {
+    box-shadow: none;
+}
+
+#top-spacing {
+    padding-top: 104px;
+}
+
+body {
+  font-family: 'Poltawski Nowy', serif;
+}
