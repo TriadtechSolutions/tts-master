@@ -3,6 +3,8 @@
 /web/sites/default/files/
 /web/sites/default/settings.php
 /web/sites/default/settings.local.php
+/web/modules/contrib/
+/web/themes/contrib/
 
 # Ignore environment files
 .env
