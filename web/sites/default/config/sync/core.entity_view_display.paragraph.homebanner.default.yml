@@ -1,0 +1,46 @@
+uuid: 92dfdcbb-4abb-4bf5-a14d-c7f0f7cf34a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.homebanner.field_bg_image
+    - field.field.paragraph.homebanner.field_button
+    - field.field.paragraph.homebanner.field_title
+    - paragraphs.paragraphs_type.homebanner
+  module:
+    - link
+id: paragraph.homebanner.default
+targetEntityType: paragraph
+bundle: homebanner
+mode: default
+content:
+  field_bg_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_button:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }
