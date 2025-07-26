@@ -1,0 +1,10 @@
+uuid: 32188169-c088-4db6-9afe-62e2b0f6742c
+langcode: en
+status: true
+dependencies: {  }
+id: vision
+label: Vision
+icon_uuid: null
+icon_default: null
+description: 'Vision section will be used for adding vision of the  organization.'
+behavior_plugins: {  }
