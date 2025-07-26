@@ -1,17 +1,15 @@
-uuid: 92dfdcbb-4abb-4bf5-a14d-c7f0f7cf34a0
+uuid: 950032c9-e5a6-4972-a64a-d51017870837
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.homebanner.field_bg_image
-    - field.field.paragraph.homebanner.field_button
-    - field.field.paragraph.homebanner.field_title
-    - paragraphs.paragraphs_type.homebanner
-  module:
-    - link
-id: paragraph.homebanner.default
+    - field.field.paragraph.vision.field_bg_image
+    - field.field.paragraph.vision.field_body
+    - field.field.paragraph.vision.field_title
+    - paragraphs.paragraphs_type.vision
+id: paragraph.vision.default
 targetEntityType: paragraph
-bundle: homebanner
+bundle: vision
 mode: default
 content:
   field_bg_image:
@@ -23,15 +21,10 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_button:
-    type: link
+  field_body:
+    type: basic_string
     label: hidden
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
+    settings: {  }
     third_party_settings: {  }
     weight: 2
     region: content
