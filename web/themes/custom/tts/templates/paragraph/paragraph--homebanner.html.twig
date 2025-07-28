@@ -1,0 +1,18 @@
+{% set title = content.field_title['#items'].0.value %}
+<section class="home-banner">
+    <img class="home-bg" src="{{ file_url(content.field_bg_image['#items'].entity.field_media_image.entity.fileuri) }}">
+    <div class="home-content">
+        <h2 class="home-title gradient-word">
+            {{ title
+            | replace({
+                'Build.': '<span class="gradient-word">Build.</span>',
+                'Design.': '<span class="gradient-word">Design.</span>',
+                'Market': '<span class="gradient-word">Market.</span>'
+                })
+            | raw }}
+        </h2>
+        <div class="home-btn">
+            {{content.field_button.0}}
+        </div>
+    </div>
+</section>
