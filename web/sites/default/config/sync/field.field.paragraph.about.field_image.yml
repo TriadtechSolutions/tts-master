@@ -1,16 +1,16 @@
-uuid: 6fd0c94e-d992-4314-8bc9-8cfaf1781db0
+uuid: d6ebb0b2-a106-43fc-9972-6dabfe60008d
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_bg_image
+    - field.storage.paragraph.field_image
     - media.type.image
-    - paragraphs.paragraphs_type.vision
-id: paragraph.vision.field_bg_image
-field_name: field_bg_image
+    - paragraphs.paragraphs_type.about
+id: paragraph.about.field_image
+field_name: field_image
 entity_type: paragraph
-bundle: vision
-label: BG_Image
+bundle: about
+label: Image
 description: ''
 required: false
 translatable: false

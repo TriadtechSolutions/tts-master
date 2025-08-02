@@ -5,8 +5,11 @@ dependencies:
   config:
     - field.field.paragraph.about.field_bg_image
     - field.field.paragraph.about.field_body
+    - field.field.paragraph.about.field_image
     - field.field.paragraph.about.field_title
     - paragraphs.paragraphs_type.about
+  module:
+    - text
 id: paragraph.about.default
 targetEntityType: paragraph
 bundle: about
@@ -22,11 +25,20 @@ content:
     weight: 0
     region: content
   field_body:
-    type: basic_string
+    type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 2
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 3
     region: content
   field_title:
     type: string
