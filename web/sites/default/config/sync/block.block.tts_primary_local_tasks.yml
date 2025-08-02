@@ -8,8 +8,8 @@ _core:
   default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
 id: tts_primary_local_tasks
 theme: tts
-region: highlighted
-weight: -4
+region: featured_bottom_third
+weight: -3
 provider: null
 plugin: local_tasks_block
 settings:

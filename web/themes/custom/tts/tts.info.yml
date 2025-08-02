@@ -7,6 +7,7 @@ base theme: bootstrap_barrio
 libraries:
   - tts/bootstrap_cdn
   - tts/global-styling
+  - tts/animatecss
 
 regions:
   top_header: 'Top header'

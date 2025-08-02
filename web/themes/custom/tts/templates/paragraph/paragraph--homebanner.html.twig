@@ -2,7 +2,10 @@
 <section class="home-banner">
     <img class="home-bg" src="{{ file_url(content.field_bg_image['#items'].entity.field_media_image.entity.fileuri) }}">
     <div class="home-content">
-        <h2 class="home-title gradient-word">
+        <h2 class="home-title gradient-word animate__animated animate__bounce">
+            {% if content.field_subtitle %}
+                <span class="subtitle">{{ content.field_subtitle['#items'].0.value }}</span>
+            {% endif %}
             {{ title
             | replace({
                 'Build.': '<span class="gradient-word">Build.</span>',
