@@ -170,10 +170,59 @@ body {
 
 /* From this onwards we will use Style for our site */
 
+
+/* Navbar */
+/* Hide by default */
+@media (max-width: 991px) {
+#CollapsingNavbar {
+  position: fixed;
+  top: 0;
+  right: -320px; /* hidden off screen */
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  transition: right 0.3s ease;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1050;
+  padding: 1rem;
+}
+
+#CollapsingNavbar.show {
+  left: 0;
+}
+
+/* Optional: disable background scroll when menu is open */
+body.menu-opened {
+  overflow: hidden;
+}
+
+.navbar-toggler {
+  padding: 7px 23px 0px 8px;
+}
+
+.navbar-toggler-icon {
+    background-image: none;
+    color: black;
+}
+
+.navbar-toggler:focus{
+  outline: none;
+  box-shadow: none;
+}
+
+.nav-item {
+  padding-bottom: 10px;
+}
+
+.navbar-nav{
+  padding: 10px 0;
+}
+}
+
 /* Home Banner Styles */
 .home-banner {
   position: relative;
-  width: 99vw;
+  width: 99.6vw;
   height: 100vh;
   min-height: 500px;
   margin-left: calc(-50vw + 50%);
@@ -383,7 +432,7 @@ body {
   #navbar-main {
     position: absolute;
     bottom: -3px;
-    left: 85px;
+    left: 75px;
   }
 
 }
@@ -392,7 +441,7 @@ body {
 
 .about-us-section {
   position: absolute;
-  width: 100vw;
+  width: 99.6vw;
   height: 80vh;
   margin-left: calc(-50vw + 50%);
   position: relative;
@@ -468,7 +517,6 @@ body {
   padding-left: 80px;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
-  align-items: flex-end;
 }
 
 .about-image-column {
@@ -493,7 +541,7 @@ body {
 
 .about-front-image {
   width: 100%;
-  height: 400px;
+  height: auto;
   object-fit: cover;
   display: block;
 }
@@ -513,7 +561,7 @@ body {
 
 .about-body-content p {
   font-size: 1.1rem;
-  line-height: 1.7;
+  line-height: 2.7;
   margin-bottom: 20px;
   text-align: justify;
   /* text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); */
@@ -523,6 +571,7 @@ body {
   color: #000000;
   font-size: 22px;
   font-weight: bold;
+  line-height: 43px;
 }
 
 .about-body-content ul {
