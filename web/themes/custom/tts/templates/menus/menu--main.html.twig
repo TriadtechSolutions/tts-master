@@ -1,0 +1,42 @@
+<nav role="navigation" aria-labelledby="block-tts-mainnavigation-menu" id="block-tts-mainnavigation" class="block block-menu navigation menu--main">
+  <h2 class="visually-hidden" id="block-tts-mainnavigation-menu">Main navigation</h2>
+
+  <ul class="clearfix nav navbar-nav" data-component-id="bootstrap_barrio:menu_main">
+    
+    <!-- ✅ Close button inside menu -->
+    <li class="nav-item menu-close">
+      <button class="close-menu-btn" aria-label="Close menu">×</button>
+    </li>
+
+    
+{% for item in items %}
+  <li class="nav-item{% if item.is_collapsed %} has-submenu{% endif %}{% if item.in_active_trail %} active-trail{% endif %}" {{ item.attributes }}>
+    {# Render the main menu link #}
+    <a href="{{ item.url }}" class="nav-link nav-link--{{ item.title|lower|replace({' ': ''}) }}">
+      {{ item.title }}
+      {# Add dropdown indicator if has submenu #}
+      {% if item.is_expanded %}
+        <span class="dropdown-arrow">▼</span>
+      {% endif %}
+    </a>
+    
+    {# Render submenu if item is collapsed and has children in 'below' #}
+    {% if item.is_expanded and item.below|length > 0 %}
+      {# Render the submenu #}
+      <ul class="submenu dropdown-menu">
+        {% for child_key, child_item in item.below %}
+          <li class="submenu-item{% if child_item.in_active_trail %} active-trail{% endif %}">
+            <a href="{{ child_item.url }}" class="submenu-link">
+              {{ child_item.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </li>
+{% endfor %}
+  </ul>
+</nav>
+
+
+

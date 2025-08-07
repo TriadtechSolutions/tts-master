@@ -173,22 +173,26 @@ body {
 
 /* Navbar */
 /* Hide by default */
-@media (max-width: 991px) {
+@media (max-width: 1024px) {
 #CollapsingNavbar {
   position: fixed;
   top: 0;
   right: -320px; /* hidden off screen */
-  width: 300px;
+  width: 100%;
   height: 100%;
   background-color: #fff;
   transition: right 0.3s ease;
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
   z-index: 1050;
   padding: 1rem;
+  overflow-y: auto;
+  transition: transform 0.3s ease-in;
+  transform: translateX(100%);
 }
 
 #CollapsingNavbar.show {
   left: 0;
+  transform: translateX(0);
 }
 
 /* Optional: disable background scroll when menu is open */
@@ -408,6 +412,7 @@ body.menu-opened {
 .navbar-nav .nav-link:hover {
   background-color: black;
   color: white;
+  padding: 5px 15px 5px 15px;
 }
 
 /* Active / clicked item style */
@@ -658,3 +663,67 @@ body.menu-opened {
   }
 }
 
+
+/* Close button styling */
+.menu-close {
+  text-align: right;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 1025px) {
+  .close-menu-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1051;
+    display: none;
+  } 
+}
+
+.close-menu-btn {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-item.active-trail > .nav-link {
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* Hide submenu by default */
+@media (min-width:1025px) {
+  ul.submenu.dropdown-menu {
+    display: none;
+    top: 45px;
+    left: 80px;
+    z-index: 99;
+    min-width: 160px;
+    background-color: transparent;
+    border: none;
+  }
+}
+
+@media (max-width:1025px) {
+  .submenu.dropdown-menu {
+    display: block;
+    border: none;
+    padding-left: 50px;
+    padding-top: 0px;
+  }
+}
+
+
+/* Show submenu on hover */
+li.nav-item:hover > ul.submenu.dropdown-menu {
+  display: block;
+}
+
+.submenu.dropdown-menu a{
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+}
