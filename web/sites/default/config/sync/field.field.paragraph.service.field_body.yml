@@ -1,0 +1,28 @@
+uuid: 430bc2ee-4e76-4627-b4a9-a970c9f6aba5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body
+    - filter.format.basic_html
+    - filter.format.full_html
+    - paragraphs.paragraphs_type.service
+  module:
+    - text
+id: paragraph.service.field_body
+field_name: field_body
+entity_type: paragraph
+bundle: service
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+  allowed_formats:
+    - basic_html
+    - full_html
+field_type: text_with_summary
