@@ -1,0 +1,10 @@
+uuid: 9d875a48-e577-4c0f-a73a-0c4485ef6e9b
+langcode: en
+status: true
+dependencies: {  }
+id: testimonials
+label: Testimonials
+icon_uuid: null
+icon_default: null
+description: 'This section is used to add the feedback of the clients'
+behavior_plugins: {  }

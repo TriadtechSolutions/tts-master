@@ -1,0 +1,10 @@
+uuid: db62ccc4-ec8c-45ca-863c-4647f0eb06ac
+langcode: en
+status: true
+dependencies: {  }
+id: testimonial
+label: Testimonial
+icon_uuid: null
+icon_default: null
+description: 'This is used as a child paragraph of Testimonials paragraph'
+behavior_plugins: {  }

@@ -1,0 +1,22 @@
+uuid: 564c1028-1922-44c8-afc3-ce637d2e049d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.testimonial.field_body
+    - paragraphs.paragraphs_type.testimonial
+  module:
+    - text
+id: paragraph.testimonial.default
+targetEntityType: paragraph
+bundle: testimonial
+mode: default
+content:
+  field_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }
