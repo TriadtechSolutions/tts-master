@@ -544,22 +544,10 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
 .about-title {
   padding-top: 0px;
   padding-right: 200px;
+  margin-left: 138px;
   padding-bottom: 120px;
   position: relative;
-}
-
-.title-black {
-  color: #000000;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-.title-green {
-  background: linear-gradient(90deg, #2e7d32, #81c784); /* adjust shades as needed */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 1;
 }
 
 .about-title h2 {
@@ -583,6 +571,7 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
 .about-content-grid {
   display: grid;
   padding-left: 80px;
+  margin-left: -80px;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
 }
@@ -591,20 +580,20 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
   animation: fadeInUp 0.8s ease-out;
 }
 
-.about-about-front-image-wrapper {
+.about-front-image-wrapper {
   padding: 0;
   margin: 0;
   margin-right: 100px;
   position: relative;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(124, 124, 124, 0.25);
+  /* box-shadow: 0 20px 60px rgba(124, 124, 124, 0.25); */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.about-about-front-image-wrapper:hover {
+.about-front-image-wrapper:hover {
   transform: translateY(-10px);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2); */
 }
 
 .about-front-image {
@@ -632,7 +621,7 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
   line-height: 2.7;
   margin-bottom: 20px;
   text-align: justify;
-  /* text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); */
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); 
 }
 
 .about-body-content strong {
@@ -665,63 +654,438 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
   }
 }
 
-/* Responsive Design */
-@media (max-width: 991px) {
+/* Responsive for About Us Section */
+
+/* Large Desktop (1200px - 1600px) */
+@media (max-width: 1600px) and (min-width: 1200px) {
   .about-title {
-    padding: 80px 0 60px 0;
+    padding-right: 150px;
+    margin-left: 100px;
+    padding-bottom: 100px;
   }
-
-  .about-content-section {
-    padding: 60px 0;
-    margin-top: -40px;
-  }
-
+  
   .about-content-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    text-align: center;
+    padding-left: 60px;
+    margin-left: -60px;
+    gap: 25px;
   }
-
-  .about-text-column {
-    padding-left: 0;
+  
+  .about-front-image-wrapper {
+    margin-right: 80px;
   }
-
-  .title-wrapper {
-    text-align: center;
-  }
-
-  .about-front-image {
-    height: 350px;
-    max-width: 500px;
-    margin: 0 auto;
-  }
-
-  .about-body-content p {
-    text-align: center;
-  }
-
-  .about-body-content ul {
-    display: inline-block;
-    text-align: left;
+  
+  .about-body-content {
+    padding-right: 40px;
+    margin-right: 80px;
   }
 }
 
-@media (max-width: 480px) {
-  .about-front-image {
-    height: 250px;
+/* Medium Desktop (992px - 1199px) */
+@media (max-width: 1199px) and (min-width: 992px) {
+  .about-us-section {
+    height: 75vh;
+    padding: 50px 0;
   }
+  
+  .about-title {
+    padding-right: 100px;
+    margin-left: 80px;
+    padding-bottom: 80px;
+  }
+  
+  .about-title h2 {
+    font-size: clamp(2rem, 4.5vw, 3.5rem);
+  }
+  
+  .about-content-section {
+    margin-top: -100px;
+    padding: 60px 0;
+  }
+  
+  .about-content-grid {
+    padding-left: 40px;
+    margin-left: -40px;
+    gap: 20px;
+  }
+  
+  .about-front-image-wrapper {
+    margin-right: 60px;
+  }
+  
+  .about-body-content {
+    padding-right: 30px;
+    margin-right: 60px;
+  }
+  
+  .about-body-content p {
+    font-size: 1.05rem;
+    line-height: 2.5;
+  }
+  
+  .about-body-content strong {
+    font-size: 20px;
+    line-height: 40px;
+  }
+}
 
+/* Small Desktop/Large Tablet (768px - 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+  .about-us-section {
+    height: auto;
+    min-height: 70vh;
+    padding: 40px 0;
+  }
+  
+  .container {
+    padding: 0 20px;
+  }
+  
+  .about-title {
+    padding-right: 50px;
+    margin-left: 40px;
+    padding-bottom: 60px;
+    text-align: center;
+  }
+  
+  .about-title h2 {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+  }
+  
+  .about-content-section {
+    margin-top: -80px;
+    padding: 50px 0;
+  }
+  
+  .about-content-grid {
+    display: block;
+    padding-left: 20px;
+    margin-left: -20px;
+    gap: 25px;
+  }
+  
+  .about-front-image-wrapper {
+    margin-right: 40px;
+  }
+  
+  .about-text-column {
+    padding-left: 15px;
+  }
+  
+  .about-body-content {
+    padding-right: 20px;
+    margin-right: 40px;
+  }
+  
+  .about-body-content p {
+    font-size: 1rem;
+    line-height: 2.3;
+  }
+  
+  .about-body-content strong {
+    font-size: 18px;
+    line-height: 36px;
+  }
+  
+  .about-body-content ul li {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+/* Tablet Portrait (576px - 767px) */
+@media (max-width: 767px) and (min-width: 576px) {
+  .about-us-section {
+    width: 100vw;
+    height: auto;
+    min-height: 80vh;
+    padding: 30px 0;
+  }
+  
   .container {
     padding: 0 15px;
   }
-
-  .about-content-section {
-    padding: 40px 0;
-    margin-top: -20px;
-    border-radius: 12px 12px 0 0;
+  
+  .about-title {
+    padding-right: 20px;
+    margin-left: 20px;
+    padding-bottom: 40px;
+    text-align: center;
   }
+  
+  .about-title h2 {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+  }
+  
+  .about-content-section {
+    margin-top: -60px;
+    padding: 40px 0;
+  }
+  
+  .about-content-grid {
+    display: block;
+    padding-left: 0;
+    margin-left: 0;
+  }
+  
+  .about-image-column {
+    margin-bottom: 30px;
+  }
+  
+  .about-front-image-wrapper {
+    margin-right: 0;
+    margin: 0 auto 30px auto;
+    max-width: 400px;
+  }
+  
+  .about-text-column {
+    padding-left: 0;
+  }
+  
+  .about-body-content {
+    padding-right: 0;
+    margin-right: 0;
+    padding: 0 20px;
+  }
+  
+  .about-body-content p {
+    font-size: 0.95rem;
+    line-height: 2.1;
+    text-align: left;
+  }
+  
+  .about-body-content strong {
+    font-size: 17px;
+    line-height: 34px;
+  }
+  
+  .about-body-content ul li {
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+  }
+}
 
-  .about-about-front-image-wrapper {
-    border-radius: 12px;
+/* Mobile Large (481px - 575px) */
+@media (max-width: 575px) and (min-width: 481px) {
+  .about-us-section {
+    width: 100vw;
+    height: auto;
+    min-height: 85vh;
+    padding: 25px 0;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+  
+  .about-title {
+    padding-right: 15px;
+    margin-left: 15px;
+    padding-bottom: 30px;
+    text-align: center;
+  }
+  
+  .about-title h2 {
+    font-size: clamp(1.3rem, 7vw, 2.2rem);
+  }
+  
+  .about-content-section {
+    margin-top: -50px;
+    padding: 35px 0;
+  }
+  
+  .about-content-grid {
+    display: block;
+    padding-left: 0;
+    margin-left: 0;
+  }
+  
+  .about-image-column {
+    margin-bottom: 25px;
+  }
+  
+  .about-front-image-wrapper {
+    margin: 0 auto 25px auto;
+    max-width: 350px;
+  }
+  
+  .about-text-column {
+    padding-left: 0;
+  }
+  
+  .about-body-content {
+    padding: 0 15px;
+    margin-right: 0;
+  }
+  
+  .about-body-content p {
+    font-size: 0.9rem;
+    line-height: 2;
+    text-align: left;
+  }
+  
+  .about-body-content strong {
+    font-size: 16px;
+    line-height: 32px;
+  }
+  
+  .about-body-content ul li {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+}
+
+/* Mobile Medium (360px - 480px) */
+@media (max-width: 480px) and (min-width: 360px) {
+  .about-us-section {
+    width: 100vw;
+    height: auto;
+    min-height: 90vh;
+    padding: 20px 0;
+    text-align: justify;
+  }
+  
+  .container {
+    padding: 0 12px;
+  }
+  
+  .about-title {
+    padding-right: 10px;
+    margin-left: 10px;
+    padding-bottom: 25px;
+    text-align: center;
+  }
+  
+  .about-title h2 {
+    font-size: clamp(1.2rem, 8vw, 2rem);
+  }
+  
+  .about-content-section {
+    margin-top: -40px;
+    padding: 30px 0;
+  }
+  
+  .about-content-grid {
+    display: block;
+    padding-left: 0;
+    margin-left: 0;
+  }
+  
+  .about-image-column {
+    margin-bottom: 20px;
+  }
+  
+  .about-front-image-wrapper {
+    margin: 0 auto 20px auto;
+    max-width: 300px;
+  }
+  
+  .about-text-column {
+    padding-left: 0;
+  }
+  
+  .about-body-content {
+    padding: 0 12px;
+    margin-right: 0;
+  }
+  
+  .about-body-content p {
+    font-size: 0.85rem;
+    line-height: 1.9;
+    text-align: left;
+    margin-bottom: 15px;
+  }
+  
+  .about-body-content strong {
+    font-size: 15px;
+    line-height: 30px;
+  }
+  
+  .about-body-content ul {
+    padding-left: 15px;
+  }
+  
+  .about-body-content ul li {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+  }
+}
+
+/* Mobile Small (320px - 360px) */
+@media (max-width: 360px) {
+  .about-us-section {
+    width: 100vw;
+    height: auto;
+    min-height: 95vh;
+    padding: 15px 0;
+  }
+  
+  .container {
+    padding: 0 10px;
+  }
+  
+  .about-title {
+    padding-right: 5px;
+    margin-left: 5px;
+    padding-bottom: 20px;
+    text-align: center;
+  }
+  
+  .about-title h2 {
+    font-size: clamp(1.1rem, 9vw, 1.8rem);
+    letter-spacing: 0.5px;
+  }
+  
+  .about-content-section {
+    margin-top: -35px;
+    padding: 25px 0;
+  }
+  
+  .about-content-grid {
+    display: block;
+    padding-left: 0;
+    margin-left: 0;
+  }
+  
+  .about-image-column {
+    margin-bottom: 15px;
+  }
+  
+  .about-front-image-wrapper {
+    margin: 0 auto 15px auto;
+    max-width: 280px;
+  }
+  
+  .about-text-column {
+    padding-left: 0;
+  }
+  
+  .about-body-content {
+    padding: 0 10px;
+    margin-right: 0;
+    text-shadow: none;
+  }
+  
+  .about-body-content p {
+    font-size: 0.8rem;
+    line-height: 1.8;
+    text-align: left;
+    margin-bottom: 12px;
+    text-shadow: none;
+  }
+  
+  .about-body-content strong {
+    font-size: 14px;
+    line-height: 28px;
+  }
+  
+  .about-body-content ul {
+    padding-left: 12px;
+    margin: 15px 0;
+  }
+  
+  .about-body-content ul li {
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+    line-height: 1.4;
   }
 }
