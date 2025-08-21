@@ -8,6 +8,7 @@ libraries:
   - tts/bootstrap_cdn
   - tts/global-styling
   - tts/animatecss
+  - tts/swiper
 
 regions:
   top_header: 'Top header'

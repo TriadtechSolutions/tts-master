@@ -40,3 +40,24 @@ animatecss:
   css:
     theme:
       https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css: {}
+
+orb:
+  css:
+    theme:
+      orb/build/static/css/main.38929a22.css: {}
+  js:
+    orb/build/static/js/main.de30a209.js: { attributes: { defer: true } }
+  dependencies:
+    - core/drupal
+
+swiper:
+  version: 11.x
+  css:
+    theme:
+      libraries/swiper/swiper-bundle.min.css: {}
+  js:
+    libraries/swiper/swiper-bundle.min.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+

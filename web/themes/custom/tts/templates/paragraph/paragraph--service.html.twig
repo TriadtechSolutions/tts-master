@@ -1,0 +1,295 @@
+{{ attach_library('tts/orb') }}
+<section class="what-we-do-section">
+    <div class="service-bg-image-wrapper">
+        <img src="{{ file_url(content.field_bg_image['#items'].entity.field_media_image.entity.fileuri) }}" 
+             alt="{{ content.field_bg_image['#items'].entity.field_media_image.alt }}" 
+             class="bg-image">
+    </div>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <div class="content-section">
+                {{ content.field_body.0 }} 
+            </div>
+            <div class="title-section">
+                <h2 class="gradient-wording">
+                    {{ content.field_title.0 }}
+                </h2>
+                 {# React Orb mount point #}
+                <div id="orb-root"></div>
+                    {# Include Orb CSS & JS #}
+                    <link rel="stylesheet" href="{{ base_path ~ directory }}/orb/build/static/css/main.38929a22.css">
+                    <script src="{{ base_path ~ directory }}/orb/build/static/js/453.484dbf83.chunk.js"></script>
+                    <script src="{{ base_path ~ directory }}/orb/build/static/js/main.de30a209.js"></script>
+                </div>
+            </div>  
+        </div>
+
+        <div class="service-grid">
+            {{ content.field_services_grid }}
+        </div>
+        <div class="button-section">
+             <button class="explore-btn">{{ content.field_button.0 }}</button>
+        </div>
+    </div>
+</section>
+
+
+
+<style>
+.what-we-do-section{
+  width: 99.6vw;      
+  height: 95vh;
+  margin-left: calc(-50vw + 50%);
+  position: relative;
+  padding: 80px 20px 100px;
+  background: linear-gradient(to bottom, #e8f5e9, #ffffff);
+  overflow: hidden;
+}
+
+.service-bg-image-wrapper{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+    margin-bottom: 100px;
+    min-height: 35vh;
+}
+
+.content-section {
+    padding-right: 40px;
+}
+
+.content-section p {
+    font-size: 2.3rem;
+    line-height: 1.8;
+    color: #CCCCCC;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+.button-section {
+    text-align: center;
+    position: relative;
+    z-index: 2; /* Ensure it is above the background */
+}
+
+.explore-btn {
+    display: inline-block;
+    background: #28343A;
+    color: #ffffff;
+    padding: 14px 28px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.explore-btn:hover {
+    background: #3A4A52;
+    transform: translateY(-2px);
+}
+
+.title-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;   /* Align all children to the right */
+    justify-content: flex-start;
+    position: relative;
+}
+
+.title-section h2 {
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 0;
+    letter-spacing: -2px;
+    font-size: 70px;
+    color: #fff;
+    margin-top: -20px;   /* lifts it slightly above paragraph */
+    margin-right: 100px; 
+    position: relative;
+    z-index: 2; /* Ensure it is above the background */
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 80px;
+    position: relative;
+    top: -30px;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.gradient-wording{
+    background: linear-gradient(to right, #ffffff, #6aaa4c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+    font-size: 70px;
+}
+
+.what-we-do-section .container{
+    max-width: 1750px;
+    margin: 0 auto;
+    padding: 0 30px;
+    position: relative;
+    z-index: 3;
+}
+
+#orb-root {
+    position: absolute;
+    z-index: 3; /* Ensure it is above the background */
+    width: 600px;
+    height: 385px;
+    top: -50px;
+    right: 0;
+}
+
+.orb-container canvas {
+  width: 600px !important;
+  height: 400px !important;
+}
+
+#orb-root .App > div {
+  width: unset !important;
+  height: unset !important;
+}
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+
+    .what-we-do-section{
+        height: 100vh;
+    }
+
+    .content-section p {
+        font-size: 1.8rem;
+        line-height: 1.5;
+    }
+
+    .orb-container canvas {
+        width: 600px !important;
+        height: 300px !important;
+   }
+
+   .service-grid {
+        top:-65px
+   }
+
+   .button-section {
+        bottom: 20px;
+   }
+}
+
+@media (min-width: 992px) and (max-width: 1100px) {
+    .what-we-do-section{
+        width: 99.3vw;
+        height: 85vh;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 991px) {
+    .content-wrapper{
+        display: flex;
+        align-items: center;
+        flex-direction: column-reverse;
+        margin-bottom: 0;
+    }
+    .title-section h2 {
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .content-section {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .what-we-do-section {
+        height: 90vh;
+    }
+}
+
+@media  (min-width: 320px) and (max-width: 767px) {
+    .what-we-do-section {
+        width: 100vw;
+        height: 85vh;
+    }
+
+    .content-section p {
+        font-size: 1.5rem;
+        line-height: 1.4;
+        margin-bottom: 0;
+    }
+
+    .title-section h2 {
+        font-size: 50px;
+    }
+
+    .content-wrapper {
+        gap: 25px;
+        min-height: 25px;
+    }
+
+    .service-grid{
+        top: -50px;
+    }
+
+    .button-section {
+        top: -20px;
+    }
+    
+}
+
+@media  (min-width: 320px) and (max-width: 375px) {
+    .what-we-do-section {
+        width: 100vw;
+        height: 100vh;
+    }
+    .service-grid{
+        top: -50px;
+    }
+
+    .content-wrapper {
+        gap: 15px;
+        min-height: 25px;
+    }
+
+
+}
+@media (max-width:992px){
+    #orb-root{
+        display: none;
+    }
+}
+
+@media (width: 1024px) {
+    #orb-root {
+       width: 500px;
+    }
+}
+
+
+</style>
