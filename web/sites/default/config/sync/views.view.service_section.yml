@@ -1,16 +1,16 @@
-uuid: 031dc01d-c9a6-4309-8f37-999758406909
+uuid: 76048918-0948-46fe-b389-b8eda0a084a3
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_image
+    - field.storage.node.body
     - node.type.services
   module:
-    - image
     - node
+    - text
     - user
-id: service_list
-label: 'Service List'
+id: service_section
+label: 'service section'
 module: views
 description: ''
 tag: ''
@@ -23,7 +23,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
-      title: 'Service List'
+      title: 'service section'
       fields:
         title:
           id: title
@@ -88,10 +88,10 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_image:
-          id: field_image
-          table: node__field_image
-          field: field_image
+        body:
+          id: body
+          table: node__body
+          field: body
           relationship: none
           group_type: group
           admin_label: ''
@@ -137,14 +137,10 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: image
-          settings:
-            image_link: content
-            image_style: ''
-            image_loading:
-              attribute: lazy
-          group_column: ''
+          click_sort_column: value
+          type: text_default
+          settings: {  }
+          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -155,9 +151,10 @@ display:
           separator: ', '
           field_api_classes: false
       pager:
-        type: none
+        type: some
         options:
           offset: 0
+          items_per_page: 5
       exposed_form:
         type: basic
         options:
@@ -239,7 +236,7 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_image'
+        - 'config:field.storage.node.body'
   block_1:
     id: block_1
     display_title: Block
@@ -255,4 +252,4 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.field_image'
+        - 'config:field.storage.node.body'

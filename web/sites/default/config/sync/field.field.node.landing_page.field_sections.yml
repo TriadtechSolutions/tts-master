@@ -7,6 +7,7 @@ dependencies:
     - node.type.landing_page
     - paragraphs.paragraphs_type.about
     - paragraphs.paragraphs_type.homebanner
+    - paragraphs.paragraphs_type.service
     - paragraphs.paragraphs_type.testimonials
   module:
     - entity_reference_revisions
@@ -26,6 +27,7 @@ settings:
     target_bundles:
       about: about
       homebanner: homebanner
+      service: service
       testimonials: testimonials
     negate: 0
     target_bundles_drag_drop:
@@ -37,7 +39,7 @@ settings:
         enabled: true
       service:
         weight: 8
-        enabled: false
+        enabled: true
       testimonial:
         weight: 9
         enabled: false

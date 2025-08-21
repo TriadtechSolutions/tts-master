@@ -1,0 +1,30 @@
+uuid: 020d9579-6c18-4ad4-8ee8-aad7b7cf67c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_services_grid
+    - paragraphs.paragraphs_type.service
+  module:
+    - viewsreference
+id: paragraph.service.field_services_grid
+field_name: field_services_grid
+entity_type: paragraph
+bundle: service
+label: 'Services Grid'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:view'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+  plugin_types:
+    block: block
+  preselect_views:
+    services_grid: services_grid
+  enabled_settings: {  }
+field_type: viewsreference
