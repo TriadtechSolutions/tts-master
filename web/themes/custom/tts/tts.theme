@@ -31,4 +31,201 @@ function tts_form_system_theme_settings_alter(&$form, FormStateInterface $form_s
     'bg-white' => t('White'),
     'bg-transparent' => t('Transparent'),
   ];
+
+    //Add a new section contact details
+    $form['my_subtheme_contact_details'] = [
+        '#type' => 'details',
+        '#title' => t('Contact Details'),
+        '#open' => 0,
+    ];
+
+    $form['my_subtheme_contact_details']['contact_heading'] = [
+        '#type' => 'textfield',
+        '#title' => t('Contact Heading'),
+        '#default_value' => theme_get_setting('contact_heading'),
+        '#description' => t('Heading text, e.g. Get in Touch'),
+    ]; 
+
+    $form['my_subtheme_contact_details']['contact_email'] = [
+    '#type' => 'email',
+    '#title' => t('Email Address'),
+    '#default_value' => theme_get_setting('contact_email'),
+    '#description' => t('Email address, e.g. contact.triadtechsolutions@gmail.com'),
+    ];
+
+    // Add a field for contact phone number
+    $form['my_subtheme_contact_details']['contact_phone'] = [
+        '#type' => 'textfield',
+        '#title' => t('Phone Number'),
+        '#default_value' => theme_get_setting('contact_phone'),
+    ];
+
+    // Add a new section social media links
+    $form['my_subtheme_social_media'] = [
+    '#type' => 'details',
+    '#title' => t('Social Media Link'),
+    '#open' => 0,
+   ];
+
+    $form['my_subtheme_social_media']['Socialmedia_heading'] = [
+        '#type' => 'textfield',
+        '#title' => t('Socialmedia heading'),
+        '#default_value' => theme_get_setting('Socialmedia_heading'),
+        '#description' => t('Heading text, e.g. Follow us on'),
+    ]; 
+
+    //Instagram link fields.
+    $form['my_subtheme_social_media']['instagram_link'] = [
+        '#type' => 'url',
+        '#title' => t('Instagram URL'),
+        '#default_value' => theme_get_setting('instagram_link'),
+    ];
+
+    $form['my_subtheme_social_media']['instagram_logo'] = [
+      '#type' => 'managed_file',
+      '#title' => t('Instagram Logo'),
+      '#description' => t('Upload an image to be used as the footer logo.'),
+      '#default_value' => theme_get_setting('instagram_logo'), // File ID to preload
+      '#upload_location' => 'public://images/', // Where to store the uploaded file
+      '#required' => FALSE,
+      '#upload_validators' => [
+        'FileExtension' => [
+            'extensions' => 'png gif jpg jpeg svg',
+        ],
+      ],
+    ];
+
+    // Linkedin link fields.
+    $form['my_subtheme_social_media']['linkedin_link'] = [
+        '#type' => 'url',
+        '#title' => t('Linkedin URL'),
+        '#default_value' => theme_get_setting('linkedin_link'),
+    ];
+
+    $form['my_subtheme_social_media']['linkedin_logo'] = [
+      '#type' => 'managed_file',
+      '#title' => t('Linkedin Logo'),
+      '#description' => t('Upload an image to be used as the footer logo.'),
+      '#default_value' => theme_get_setting('linkedin_logo'), // File ID to preload
+      '#upload_location' => 'public://images/', // Where to store the uploaded file
+      '#required' => FALSE,
+      '#upload_validators' => [
+        'FileExtension' => [
+            'extensions' => 'png gif jpg jpeg svg',
+        ],
+      ],
+    ];
+
+  // Attach the custom submit handler
+  // $form['#submit'][] = 'tts_form_system_theme_settings_submit';
+
 }
+
+// function tts_form_system_theme_settings_submit($form, FormStateInterface $form_state) {
+//   // New uploaded files
+//   $instagram_file_ids = $form_state->getValue('instagram_logo');
+  
+//   if (!empty($instagram_file_ids) && is_array($instagram_file_ids)) {
+//     foreach ($instagram_file_ids as $file_id) {
+//       if ($file = \Drupal\file\Entity\File::load($file_id)) {
+//         $file->setPermanent();
+//         $file->save();
+//         \Drupal::service('file.usage')->add($file, 'system', 'theme_setting', 1);
+//       }
+//     }
+//   }
+
+//   // Clean up old files
+//   $instagram_old_file_ids = theme_get_setting('instagram_logo');
+//   if (!empty($instagram_old_file_ids) && is_array($instagram_old_file_ids)) {
+//     foreach ($instagram_old_file_ids as $old_file_id) {
+//       if (!in_array($old_file_id, $instagram_file_ids ?? [])) {
+//         if ($old_file = \Drupal\file\Entity\File::load($old_file_id)) {
+//           \Drupal::service('file.usage')->delete($old_file, 'system', 'theme_setting', 1);
+//         }
+//       }
+//     }
+//   }
+
+//   // New uploaded files
+//   $linkedin_file_ids = $form_state->getValue('linkedin_logo');
+  
+//   if (!empty($linkedin_file_ids) && is_array($linkedin_file_ids)) {
+//     foreach ($linkedin_file_ids as $file_id) {
+//       if ($file = \Drupal\file\Entity\File::load($file_id)) {
+//         $file->setPermanent();
+//         $file->save();
+//         \Drupal::service('file.usage')->add($file, 'system', 'theme_setting', 1);
+//       }
+//     }
+//   }
+
+//   // Clean up old files
+//   $linkedin_old_file_ids = theme_get_setting('linkedin_logo');
+//   if (!empty($linkedin_old_file_ids) && is_array($linkedin_old_file_ids)) {
+//     foreach ($linkedin_old_file_ids as $old_file_id) {
+//       if (!in_array($old_file_id, $linkedin_file_ids ?? [])) {
+//         if ($old_file = \Drupal\file\Entity\File::load($old_file_id)) {
+//           \Drupal::service('file.usage')->delete($old_file, 'system', 'theme_setting', 1);
+//         }
+//       }
+//     }
+//   }
+ 
+// } 
+
+
+  
+
+ function tts_preprocess_page(&$variables) {
+    $variables['contact_heading'] = theme_get_setting('contact_heading');
+    $variables['contact_phone'] = theme_get_setting('contact_phone');
+    $variables['contact_email'] = theme_get_setting('contact_email');
+    $variables['Socialmedia_heading'] = theme_get_setting('Socialmedia_heading');
+    $variables['instagram_link'] = theme_get_setting('instagram_link');
+    $variables['linkedin_link'] = theme_get_setting('linkedin_link');
+
+
+    // Instagram logo
+  $instagram_file_ids = theme_get_setting('instagram_logo');
+  if (!empty($instagram_file_ids) && is_array($instagram_file_ids)) {
+    $file_id = reset($instagram_file_ids);
+    $file = \Drupal\file\Entity\File::load($file_id);
+    if ($file) {
+      // Redundantly make permanent if needed
+      if ($file->isTemporary()) {
+        $file->setPermanent();
+        $file->save();
+      }
+
+      $variables['instagram_image_url'] = \Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
+    } else {
+      $variables['instagram_image_url'] = 'https://example.com/default-instagram-image.jpg';
+    }
+  } else {
+    $variables['instagram_image_url'] = 'https://example.com/default-instagram-image.jpg';
+  }
+}
+
+    // linkedin logo
+  $linkedin_file_ids = theme_get_setting('linkedin_logo');
+  if (!empty($linkedin_file_ids) && is_array($linkedin_file_ids)) {
+    $file_id = reset($linkedin_file_ids);
+    $file = \Drupal\file\Entity\File::load($file_id);
+    if ($file) {
+      // Redundantly make permanent if needed
+      if ($file->isTemporary()) {
+        $file->setPermanent();
+        $file->save();
+      }
+
+      $variables['linkedin_image_url'] = \Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
+    } else {
+      $variables['linkedin_image_url'] = 'https://example.com/default-linkedin-image.jpg';
+    }
+  } else {
+    $variables['linkedin_image_url'] = 'https://example.com/default-linkedin-image.jpg';
+  }
+
+
+
