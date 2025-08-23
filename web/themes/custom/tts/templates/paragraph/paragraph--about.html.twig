@@ -23,7 +23,7 @@
       <div class="about-content-grid">
 
         {# Front Image #}
-        <div class="about-image-column">
+        {# <div class="about-image-column"> #}
           {% if content.field_image['#items'] %}
             <div class="about-front-image-wrapper">
               <img src="{{ file_url(content.field_image['#items'].entity.field_media_image.entity.fileuri) }}" 
@@ -31,7 +31,7 @@
                    class="about-front-image">
             </div>
           {% endif %}
-        </div>
+        {# </div> #}
 
         {# Text Content #}
         <div class="about-text-column">
@@ -46,4 +46,4 @@
     </div>
   </div>
 
-</section>
+  </section>
