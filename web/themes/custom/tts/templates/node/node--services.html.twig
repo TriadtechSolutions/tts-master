@@ -1,0 +1,62 @@
+{# Twig for detailed page #}
+
+{% if content.field_detailed_title %}
+    <div class="detailed-title">
+    <span class="gradient-word">{{content.field_detailed_title.0}}</span>
+    </div>
+{% endif %}
+
+<div class="detailed-banner">
+  <div class="detailed-banner-content">
+    {% if content.field_detailed_banner_text %}
+      <div class="detailed-banner-text">
+        {{ content.field_detailed_banner_text.0 }}
+      </div>
+    {% endif %}
+    {% if content.field_detailed_banner_image %}
+      <div class="detailed-banner-image">
+        <img src="{{ file_url(content.field_detailed_banner_image['#items'].entity.field_media_image.entity.fileuri) }}" 
+             alt="{{ content.field_detailed_banner_image['#items'].entity.field_media_image.alt }}">
+      </div>
+    {% endif %}
+  </div>
+
+  {% if content.field_detailed_button %}
+    <div class="detailed-banner-button">
+      {{ content.field_detailed_button.0 }}
+    </div>
+  {% endif %}
+</div>
+
+
+{# Section: Image + Description #}
+<div class="detailed-description-wrapper">
+  <div class="detailed-description-inner">
+    {% if content.field_detailed_front_image %}
+      <div class="detailed-description-image">
+        <img src="{{ file_url(content.field_detailed_front_image['#items'].entity.field_media_image.entity.fileuri) }}" 
+             alt="{{ content.field_detailed_front_image['#items'].entity.field_media_image.alt }}">
+      </div>
+    {% endif %}
+
+    {% if content.field_detailed_description1 %}
+      <div class="detailed-description-text">
+        {{ content.field_detailed_description1.0 }}
+      </div>
+    {% endif %}
+  </div>
+
+  {% if content.field_detailed_description2 %}
+    <div class="detailed-description2">
+      {{ content.field_detailed_description2.0 }}
+    </div>
+  {% endif %}
+</div>
+
+
+{# Choose Us Section #}
+{% if content.field_detailed_choose_us %}
+  <div class="detailed-choose-us">
+    {{ content.field_detailed_choose_us.0 }}
+  </div>
+{% endif %}

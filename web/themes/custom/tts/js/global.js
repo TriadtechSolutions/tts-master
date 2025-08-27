@@ -40,7 +40,7 @@
         prevEl: ".swiper-button-prev",
       },
       autoplay: {
-        delay: 1000,   // 3 seconds per slide
+        delay: 3500,   // 3 seconds per slide
         disableOnInteraction: false, // keep autoplay even if user clicks
       },
       breakpoints: {
