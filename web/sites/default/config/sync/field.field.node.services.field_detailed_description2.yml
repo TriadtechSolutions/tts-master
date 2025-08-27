@@ -1,0 +1,24 @@
+uuid: ce5e8f52-c24f-4494-bdae-182014149b0d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_detailed_description2
+    - filter.format.full_html
+    - node.type.services
+  module:
+    - text
+id: node.services.field_detailed_description2
+field_name: field_detailed_description2
+entity_type: node
+bundle: services
+label: 'Detailed description2'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text_long

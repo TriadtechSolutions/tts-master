@@ -5,6 +5,14 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.services.body
+    - field.field.node.services.field_detailed_banner_image
+    - field.field.node.services.field_detailed_banner_text
+    - field.field.node.services.field_detailed_button
+    - field.field.node.services.field_detailed_choose_us
+    - field.field.node.services.field_detailed_description1
+    - field.field.node.services.field_detailed_description2
+    - field.field.node.services.field_detailed_front_image
+    - field.field.node.services.field_detailed_title
     - field.field.node.services.field_image
     - field.field.node.services.field_image2
     - image.style.medium
@@ -43,4 +51,12 @@ content:
     weight: 100
     region: content
 hidden:
+  field_detailed_banner_image: true
+  field_detailed_banner_text: true
+  field_detailed_button: true
+  field_detailed_choose_us: true
+  field_detailed_description1: true
+  field_detailed_description2: true
+  field_detailed_front_image: true
+  field_detailed_title: true
   field_image2: true

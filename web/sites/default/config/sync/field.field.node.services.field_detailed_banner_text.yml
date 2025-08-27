@@ -1,0 +1,24 @@
+uuid: 9b268191-57ca-4e7c-9c68-080732fcd9df
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_detailed_banner_text
+    - filter.format.full_html
+    - node.type.services
+  module:
+    - text
+id: node.services.field_detailed_banner_text
+field_name: field_detailed_banner_text
+entity_type: node
+bundle: services
+label: 'Detailed banner text'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text_long

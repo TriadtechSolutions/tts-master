@@ -1,0 +1,24 @@
+uuid: 980f3de4-1840-4159-b7d2-73f0764e26e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_detailed_choose_us
+    - filter.format.full_html
+    - node.type.services
+  module:
+    - text
+id: node.services.field_detailed_choose_us
+field_name: field_detailed_choose_us
+entity_type: node
+bundle: services
+label: 'Detailed choose us'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - full_html
+field_type: text_long

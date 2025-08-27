@@ -1,0 +1,29 @@
+uuid: c0bf444e-c8b2-499c-bde4-8d8bdc70bcf2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_detailed_front_image
+    - media.type.image
+    - node.type.services
+id: node.services.field_detailed_front_image
+field_name: field_detailed_front_image
+entity_type: node
+bundle: services
+label: 'Detailed front image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
