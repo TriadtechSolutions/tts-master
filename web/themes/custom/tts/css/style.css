@@ -566,7 +566,7 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
   margin-left: calc(-50vw + 50%);
   position: relative;
   padding: 60px 0;
-  background: linear-gradient(to bottom, #e8f5e9, #ffffff);
+  /* background: linear-gradient(to bottom, #e8f5e9, #ffffff); */
   overflow: hidden;
 }
 
