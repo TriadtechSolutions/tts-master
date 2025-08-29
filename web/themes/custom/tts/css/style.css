@@ -602,6 +602,13 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
   z-index: 1;
 }
 
+@media screen and (max-width: 767px) {
+  .about-title {
+    padding-top: 35px;
+  }
+  
+}
+
 .about-title h2 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
@@ -637,6 +644,12 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
   margin-left: 50px;
 }
 
+@media (max-width: 767px) {
+  .about-front-image-wrapper img{
+    margin-left: 0;
+  }
+}
+
 .about-front-image-wrapper img:hover {
   transform: translateY(-10px);
 }
@@ -647,6 +660,14 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
   object-fit: cover;
   display: block;
   border-radius: 30px;
+}
+
+@media screen and (max-width: 767px) {
+  .about-front-image {
+    width: 100%;
+    height: auto;
+  }
+  
 }
 
 .about-text-column {
@@ -664,6 +685,14 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
   margin-top: -30px;
 }
 
+@media screen and (max-width: 767px) {
+  .about-body-content {
+    margin-left: 0;
+    margin-top: 15px;
+  }
+  
+}
+
 .about-body-content p {
   font-size: 1.1rem;
   line-height: 2.4;
@@ -675,7 +704,7 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
 .about-body-content strong {
   color: #000000;
   font-size: 24px;
-  font-weight: bold;
+  font-weight: 500;
   line-height: 46px;
 }
 
@@ -704,7 +733,6 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
 
 /* Responsive for About Us Section */
 
-/* Large Desktop (1200px - 1600px) */
 @media (max-width: 1600px) and (min-width: 1200px) {
   .about-us-section {
     height: 90vh;
@@ -990,7 +1018,7 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
   .about-us-section {
     width: 100vw;
     height: auto;
-    min-height: 90vh;
+    min-height: 80vh;
     padding: 20px 0;
     text-align: justify;
   }
@@ -1042,7 +1070,7 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
   .about-body-content p {
     font-size: 0.85rem;
     line-height: 1.9;
-    text-align: left;
+    text-align: justify;
     margin-bottom: 15px;
   }
   
@@ -2173,6 +2201,18 @@ border: none;
        width: 500px;
     }
 }
+
+@media (min-width: 374px) and (max-width: 400px) {
+  .content-wrapper {
+    margin-top: -30px;
+  }
+  .title-section h2 {
+    font-size: 40px;
+  }
+  .what-we-do-section .container{
+    padding: 0 1px;
+  }
+ }
 
 
 
