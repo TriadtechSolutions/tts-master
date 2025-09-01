@@ -24,6 +24,7 @@
         "drupal/paragraphs": "^1.19",
         "drupal/svg_image_field": "^2.3",
         "drupal/viewsreference": "^2.0@beta",
+        "drupal/webform": "^6.3@beta",
         "drush/drush": "^13.6"
     },
     "conflict": {
