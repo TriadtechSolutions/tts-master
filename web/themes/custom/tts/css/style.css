@@ -1593,7 +1593,7 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
   margin-top: 33px;
  }
 
- .content-wrapper {
+ .socialmedia-wrapper {
   display: flex;
   gap: 8px;
  }
@@ -1608,6 +1608,7 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
   color: rgb(0, 0, 0);
   text-decoration: none;
   font-size: 16px;
+  margin-top: 2px;
  }
 
 .footer-second {
