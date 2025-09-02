@@ -1,4 +1,4 @@
-{# Twig for detailed page #}
+
 
 {% if content.field_detailed_title %}
     <div class="detailed-title">
@@ -29,7 +29,6 @@
 </div>
 
 
-{# Section: Image + Description #}
 <div class="detailed-description-wrapper">
   <div class="detailed-description-inner">
     {% if content.field_detailed_front_image %}
@@ -54,7 +53,7 @@
 </div>
 
 
-{# Choose Us Section #}
+
 {% if content.field_detailed_choose_us %}
   <div class="detailed-choose-us">
     {{ content.field_detailed_choose_us.0 }}

@@ -1,3 +1,15 @@
-{{ fields.title.content }}
-{{fields.body.content}}
-{{fields.field_image2.content}}
+<div class="service-content">
+  <div class="service-text">
+    <h3 class="service-title">{{ fields.title.content }}</h3>
+    <div class="service-description">
+      {{ fields.body.content }}
+    </div>
+    <div class="service-buttons">
+      {{ fields.field_learn_more.content }}
+      {{ fields.field_quote_button.content }}
+    </div>
+  </div>
+  <div class="service-image">
+    {{ fields.field_image2.content }}
+  </div>
+</div>

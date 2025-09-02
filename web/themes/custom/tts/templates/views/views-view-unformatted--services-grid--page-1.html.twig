@@ -1,5 +1,8 @@
-{% for row in rows %}
-      <div class="swiper-slide">
-        {{ row.content }}
-      </div>
-    {% endfor %}
+<div class="services-list">
+  <h2 class="services-title">Our Service Portfolio</h2>
+  {% for row in rows %}
+    <div class="service-item {{ cycle(['left-align', 'right-align'], loop.index0) }}">
+      {{ row.content }}
+    </div>
+  {% endfor %}
+</div>
