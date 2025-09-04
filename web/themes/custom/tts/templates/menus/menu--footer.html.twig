@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Theme override for a footer menu.
+ *
+ * Available variables:
+ * - items: A nested list of menu items.
+ * - attributes: HTML attributes for the <ul> element.
+ * - menu_name: The machine name of the menu.
+ */
+#}
+
+{% if items %}
+  <nav class="footer-menu" role="navigation" aria-label="{{ menu_name|clean_id }}">
+    <ul{{ attributes.addClass('footer-menu__list') }}>
+      {% for item in items %}
+        <li{{ item.attributes.addClass('footer-menu__item') }}>
+          <a href="{{ item.url }}"{{ item.link_attributes.addClass('footer-menu__link') }}>
+            {{ item.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+{% endif %}
