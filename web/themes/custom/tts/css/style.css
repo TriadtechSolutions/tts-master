@@ -2449,9 +2449,430 @@ border: none;
   }
 }
 
+/* STYLE FOR CONTACT US FORM STARTS HERE */
+
+.contact-page-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.contactus-wrapper {
+  background: linear-gradient(135deg, #b3b5b0 0%, #ffffff 100%);
+  padding: 80px 60px;
+  text-align: center;
+  position: relative;
+}
+
+.contact-header-content {
+  position: relative;
+  z-index: 1;
+  color: #000;
+}
+
+.contactus-wrapper h2 {
+  font-size: 40px;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.contact-description {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #000;
+}
+
+.contact-features {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  font-size: 17px;
+}
+
+.contact-features ul,
+.contact-features ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contact-features li {
+  font-size: 20px;
+  /* font-weight: 500; */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-features .field__item::before {
+  content: "✓";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-right: 8px;
+  color: black;
+}
 
 
+.contactus-formwrapper {
+  background: #ffffff;
+}
 
+.form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  
+}
+
+.contactus-formwrapper h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.2;
+  margin-top: 30px;
+  color: black;
+}
+
+.contactus-formwrapper p{
+  font-size: 22px;
+  text-align: center;
+  color: black;
+  padding: 5px;
+}
+
+.form-description {
+  font-size: 1.1rem;
+  text-align: center;
+  color: #666;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contactus-form {
+  width: 100%;
+}
+
+.contactus-form form {
+  display: grid;
+  gap: 24px;
+}
+
+.contactus-form .form-item {
+  margin: 0;
+}
+
+.contactus-form .form-item label {
+  display: block;
+  /* font-weight: 600; */
+  color: #000000;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+/* Form Grid Layout */
+.contactus-form .form-item:nth-child(1),
+.contactus-form .form-item:nth-child(2) {
+  display: inline-block;
+  width: calc(50% - 12px);
+  vertical-align: top;
+}
+
+.contactus-form .form-item:nth-child(1) {
+  margin-right: 24px;
+}
+
+/* Input Styles */
+.contactus-form input[type="text"],
+.contactus-form input[type="email"],
+.contactus-form input[type="tel"],
+.contactus-form select,
+.contactus-form textarea {
+  width: 100%;
+  padding: 16px 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #ffffff;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.contactus-form input[type="text"]:focus,
+.contactus-form input[type="email"]:focus,
+.contactus-form input[type="tel"]:focus,
+.contactus-form select:focus,
+.contactus-form textarea:focus {
+  outline: none;
+  border-color: #5FD47A;
+  box-shadow: 0 0 0 3px rgba(95, 212, 122, 0.1);
+}
+
+.contactus-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Checkbox/Radio Styles */
+.contactus-form .form-checkboxes,
+.contactus-form .form-radios {
+  display: grid;
+  gap: 12px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+}
+
+.contactus-form .form-item.form-type-checkbox,
+.contactus-form .form-item.form-type-radio {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.contactus-form input[type="checkbox"],
+.contactus-form input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: #5FD47A;
+  margin-right: 10px;
+}
+
+.contactus-form .form-type-checkbox label,
+.contactus-form .form-type-radio label {
+  margin: 0;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.field--type-list-string {
+  display: flex;
+  gap: 35px;
+}
+
+.field--type-list-string .field_item {
+  border-radius: 10px;
+}
+
+.contactus-form input[type="submit"],
+.contactus-form button[type="submit"] {
+  background: white;
+  color: rgb(0, 0, 0);
+  border: 2px black solid;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: none;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(173, 173, 173, 0.3);
+  margin: 20px auto 0;
+  display: block;
+  min-width: 200px;
+}
+
+.contactus-form input[type="submit"]:hover,
+.contactus-form button[type="submit"]:hover {
+  background: black;
+  transform: translateY(-2px);
+  color: rgb(255, 255, 255);
+}
+
+.contactus-form input[type="submit"]:active,
+.contactus-form button[type="submit"]:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+/* Error and Status Messages */
+.contactus-form .form-item.error input,
+.contactus-form .form-item.error select,
+.contactus-form .form-item.error textarea {
+  border-color: #e74c3c;
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+.contactus-form .error-message {
+  color: #e74c3c;
+  font-size: 0.875rem;
+  margin-top: 8px;
+}
+
+.messages {
+  margin-bottom: 30px;
+  padding: 16px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.messages.status {
+  background: #d4edda;
+  border: 2px solid #c3e6cb;
+  color: #155724;
+}
+
+.messages.error {
+  background: #f8d7da;
+  border: 2px solid #f5c6cb;
+  color: #721c24;
+}
+
+#webform-submission-contact-node-9-add-form label {
+  color: black;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* RESPONSIVE STYLE FOR  CONTACTUS FORM STARTS HERE */
+
+@media (max-width: 767px) {
+
+  .contact-page-container {
+    border-radius: 0; /* full width look on mobile */
+    box-shadow: none;
+  }
+
+  .contactus-wrapper {
+    padding: 40px 20px; /* reduce padding */
+    text-align: center;
+  }
+
+  .contactus-wrapper h2 {
+    font-size: 24px; /* smaller heading */
+    margin-bottom: 15px;
+  }
+
+  .contact-description {
+    font-size: 12px;
+    line-height: 1.5;
+    /* padding: 0 10px; */
+  }
+
+  /* Features section */
+  .contact-features {
+    flex-direction: row;
+    gap: 10px;
+    font-size: 13px;
+  }
+
+  .contact-features ul,
+  .contact-features ol {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .contact-features li {
+    justify-content: center; /* center align on mobile */
+    font-size: 16px;
+  }
+
+  .field--type-list-string {
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+  }
+
+  /* Form wrapper */
+  .form-container {
+    padding: 0 15px;
+  }
+
+  .contactus-formwrapper h2 {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+
+  .contactus-formwrapper p {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .form-description {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  /* Form grid → single column on mobile */
+  .contactus-form form {
+    display: block;
+  }
+
+  .contactus-form .form-item:nth-child(1),
+  .contactus-form .form-item:nth-child(2) {
+    display: block;
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
+
+  /* Inputs */
+  .contactus-form input[type="text"],
+  .contactus-form input[type="email"],
+  .contactus-form input[type="tel"],
+  .contactus-form select,
+  .contactus-form textarea {
+    font-size: 0.95rem;
+    padding: 14px 16px;
+  }
+
+  .contactus-form textarea {
+    min-height: 100px;
+  }
+
+  /* Checkboxes & radios */
+  .contactus-form .form-checkboxes,
+  .contactus-form .form-radios {
+    padding: 15px;
+    gap: 10px;
+  }
+
+  .contactus-form input[type="checkbox"],
+  .contactus-form input[type="radio"] {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Submit button */
+  .contactus-form input[type="submit"],
+  .contactus-form button[type="submit"] {
+    /* min-width: 100%; */
+    /* margin-top: 15px; */
+    font-size: 1rem;
+    /* padding: 14px; */
+  }
+
+  /* Messages */
+  .messages {
+    font-size: 14px;
+    padding: 12px 15px;
+  }
+}
 
 
 

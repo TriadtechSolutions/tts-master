@@ -1,0 +1,21 @@
+<div class="contact-page-container">
+  <div class="contactus-wrapper">
+    <div class="contact-header-content">
+        <h2> {{ content.field_contact_title.0 }} </h2>
+      <p class="contact-description">{{ content.body.0['#text'] }}</p>
+      <div class="contact-features">
+        {{ content.field_contact_list }}
+      </div>
+    </div>
+  </div>
+
+  <div class="contactus-formwrapper">
+    <div class="form-container">
+      <h2>{{ content.field_contact_form_title.0 }}</h2>
+      <p class="form-description">{{ content.field_contact_description.0 }}</p>
+      <div class="contactus-form">
+        {{ content.field_contact_form.0 }}
+      </div>
+    </div>
+  </div>
+</div>
