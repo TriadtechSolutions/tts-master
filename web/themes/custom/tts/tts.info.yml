@@ -9,6 +9,7 @@ libraries:
   - tts/global-styling
   - tts/animatecss
   - tts/swiper
+  - tts/fontawesome
 
 regions:
   top_header: 'Top header'
