@@ -1,0 +1,15 @@
+<section class="leadership-section">
+{% if content.field_bg_image['#items'] %}
+    <div class="leader-bg-image-wrapper">
+      <img src="{{ file_url(content.field_bg_image['#items'].entity.field_media_image.entity.fileuri) }}" alt="{{ content.field_bg_image['#items'].entity.field_media_image.alt }}" 
+           class="leader-bg-image">
+    </div>
+  {% endif %}
+  <div class="leadership-title-wrapper">
+    <h2 class="leadership-title">{{content.field_titles.0}}</h2>
+  </div>
+<div class="leaders-container">  
+    {{content.field_leaders}}
+</div>
+
+</section>
