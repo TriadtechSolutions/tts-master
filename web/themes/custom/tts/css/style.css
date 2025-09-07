@@ -561,13 +561,11 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
 /* About US Section */
 
 .about-us-section {
-  position: absolute;
   width: 99.6vw;
   height: 75vh;
   margin-left: calc(-50vw + 50%);
   position: relative;
   padding: 60px 0;
-  /* background: linear-gradient(to bottom, #e8f5e9, #ffffff); */
   overflow: hidden;
 }
 
@@ -1566,80 +1564,13 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
 
 /* Footer Starts Here */
 
-/* .site-footer {
-  background-color: #ffffff !important;
-} */
-
-.region-footer-first .nav-item .nav-link{
-  color: rgb(255, 255, 255);
-
+.footer-first img{
+  width: 100%;
 }
 
-.site-footer h2{
-  color: rgb(255, 255, 255);
-  text-align: left;
-}
-
- .footer-box {
-  /* background: #f2f2f2; */
-  border-radius: 30px;
- }
-
- .footer-third img {
-  height: 20px;
- }
-
- .footer-third {
-  text-align: left;
-  margin-top: 33px;
- }
-
- .socialmedia-wrapper {
-  display: flex;
-  gap: 8px;
- }
-
- .content-text a{
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-  font-size: 16px;
- }
-
- .content-text p{
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-  font-size: 16px;
-  margin-top: 2px;
- }
-
-.footer-second {
-  position: relative;
-  text-align: left;
-  margin-top: 33px;
-}
-
-/* .footer-second::before {
-  content: "";
-  position: absolute;
-  top: 30px;
-  left: -60px;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(to bottom, #ffffff, #ffffff, #ffffff);
-} */
-
-/* .footer-second::after {
-  content: "";
-  position: absolute;
-  top: 30px;
-  right: 0;
-  width: 2px;
-  height: 100%;
-  background: linear-gradient(to bottom, #ffffff, #ffffff, #ffffff);
-} */
-
-.site-footer .block {
-border: none;
+.content-text p{
+  color: greenyellow;
+  font-size: 23px;
 }
 
 /* Style for DETAILED SERVICES PAFE starts here */

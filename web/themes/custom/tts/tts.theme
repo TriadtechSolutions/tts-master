@@ -171,28 +171,6 @@ function tts_form_system_theme_settings_alter(&$form, FormStateInterface $form_s
   } else {
     $variables['instagram_image_url'] = 'https://example.com/default-instagram-image.jpg';
   }
-}
-
-    // linkedin logo
-  $linkedin_file_ids = theme_get_setting('linkedin_logo');
-  if (!empty($linkedin_file_ids) && is_array($linkedin_file_ids)) {
-    $file_id = reset($linkedin_file_ids);
-    $file = \Drupal\file\Entity\File::load($file_id);
-    if ($file) {
-      // Redundantly make permanent if needed
-      if ($file->isTemporary()) {
-        $file->setPermanent();
-        $file->save();
-      }
-
-      $variables['linkedin_image_url'] = \Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
-    } else {
-      $variables['linkedin_image_url'] = 'https://example.com/default-linkedin-image.jpg';
-    }
-  } else {
-    $variables['linkedin_image_url'] = 'https://example.com/default-linkedin-image.jpg';
-  }
-
 
   // Site logo
   $site_file_ids = theme_get_setting('site_logo');
@@ -214,4 +192,36 @@ function tts_form_system_theme_settings_alter(&$form, FormStateInterface $form_s
     $variables['site_image_url'] = 'https://example.com/default-linkedin-image.jpg';
   }
 
+ $block_manager = \Drupal::service('plugin.manager.block');
 
+// Services menu
+$plugin_block = $block_manager->createInstance('system_menu_block:services', []);
+$render = $plugin_block->build();
+$variables['footer_services_menu'] = $render;
+
+// Company menu
+$plugin_block_1 = $block_manager->createInstance('system_menu_block:footer', []);
+$render_1 = $plugin_block_1->build();
+$variables['footer_company_menu'] = $render_1;
+
+}
+
+    // linkedin logo
+  $linkedin_file_ids = theme_get_setting('linkedin_logo');
+  if (!empty($linkedin_file_ids) && is_array($linkedin_file_ids)) {
+    $file_id = reset($linkedin_file_ids);
+    $file = \Drupal\file\Entity\File::load($file_id);
+    if ($file) {
+      // Redundantly make permanent if needed
+      if ($file->isTemporary()) {
+        $file->setPermanent();
+        $file->save();
+      }
+
+      $variables['linkedin_image_url'] = \Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
+    } else {
+      $variables['linkedin_image_url'] = 'https://example.com/default-linkedin-image.jpg';
+    }
+  } else {
+    $variables['linkedin_image_url'] = 'https://example.com/default-linkedin-image.jpg';
+  }

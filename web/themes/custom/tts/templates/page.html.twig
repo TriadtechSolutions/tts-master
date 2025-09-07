@@ -147,6 +147,40 @@
         <div class="{{ container }}">
           {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
             <div class="site-footer__top clearfix">
+
+        {# <div class="col-12 col-md-4 mb-3"> #}
+            <div class="footer-first">
+               {# <h2 class= "site-logo" {{ site_logo }}</h2> #}
+               <img src="{{ site_image_url }}" alt="site_logo" >
+            <div class= "content-text">
+               <p>{{ Socialmedia_heading }}</p>
+            </div>  
+           </div>
+        {# </div> #}
+
+        {# <div class="col-12 col-md-4 mb-3"> #}
+            <div class="footer-fourth">
+               <h2 class= "contact-heading"> {{ contact_heading }}</h2>
+            <div class= "content-text">
+               <p>
+               <a href="tel:{{ contact_phone|escape }}">Phone : {{ contact_phone|escape }}</a>
+               </p>
+             <p>
+               <a href="mailto:{{ contact_email|escape }}">{{ contact_email|escape }}</a>
+             </p>
+               <div class="footer-menu">
+                {{ footer_services_menu }}
+              </div>
+               <div class="footer-menu">
+                {{footer_company_menu}}
+              </div>
+            </div>  
+           </div>
+        {# </div> #}
+            {# {{ dump(site_image_url) }}    #}
+            {# {{contact_heading}}
+            {{contact_phone}}
+            {{contact_email}}  #}
               {{ page.footer_first }}
               {{ page.footer_second }}
               {{ page.footer_third }}
@@ -160,3 +194,5 @@
           {% endif %}
         </div>
       {% endblock %}
+
+ 
