@@ -1,0 +1,32 @@
+<section class="package-section">      
+    <div class="package-bg-image-wrapper">       
+      <img src="{{ file_url(content.field_bg_image['#items'].entity.field_media_image.entity.fileuri) }}" 
+           alt="{{ content.field_bg_image['#items'].entity.field_media_image.alt }}"             
+           class="package-bg-image">     
+    </div>   
+  <div class="package-wrapper">
+    <h2 class="package-title">
+      Choose Your<br>
+      <span class="highlight">Perfect Package</span>
+    </h2>
+    
+    <div class="package-description">
+      {{ content.field_body.0 }}
+    </div>
+    
+    <div class="package-features">
+      <div class="feature-item">
+        <span class="feature-icon"></span>
+        <span>No Hidden Fees</span>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon"></span>
+        <span>30-Day Money Back</span>
+      </div>
+      <div class="feature-item">
+        <span class="feature-icon"></span>
+        <span>24/7 Support</span>
+      </div>
+    </div>
+  </div>
+</section> 
