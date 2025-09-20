@@ -3,5 +3,5 @@
 <div class="service-card">
     <img src = "{{file_url(row._entity.field_image.entity.uri.value)}}" alt = "{{row._entity.field_image.alt}}" height = "300px" width = "300px" class="services-image">
     <h2 class = "service-title">{{fields.title.content}}</h2>
-    <p class = "services-description">{{fields.body.content}}</p>
+    {{fields.body.content}}
 </div>
