@@ -54,7 +54,7 @@
 
 $(function() {
   var colors = ["card-blue", "card-orange", "card-red", "card-green", "card-purple"];
-  $('.pricing-card').each(function(index) {
+  $('.pricing-card, .seo-package-card').each(function(index) {
     var colorClass = colors[index % colors.length];
     $(this).addClass(colorClass);
   });
