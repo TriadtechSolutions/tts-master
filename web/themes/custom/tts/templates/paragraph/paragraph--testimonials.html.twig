@@ -17,7 +17,7 @@
       {% endif %}
     </div>
   
-    <div class="testimonials-grid">
+    {# <div class="testimonials-grid"> #}
       {% for item in content.field_testimonial ['#items']%}
         {% if item.entity %}
           <div class="testimonial-card">
@@ -27,6 +27,6 @@
           </div>
         {% endif %}
       {% endfor %}
-    </div>
+    {# </div> #}
   </div>
 </section>

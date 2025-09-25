@@ -4,6 +4,7 @@
  */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
 @import url(https://db.onlinewebfonts.com/c/771c49f7c4367802d13ab202d164204b?family=Outfit);
+@import url(https://db.onlinewebfonts.com/c/b22bc1a9c9f1ee6fa9c2a1de69be7903?family=Syncopate);
 
  * {
     margin: 0;
@@ -1224,7 +1225,6 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
   font-weight: bold;
   color: #000000;
   margin: 0 0 20px 0;
-  text-transform: uppercase;
   letter-spacing: 3px;
   font-family: Syncopate;
   text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
@@ -3713,4 +3713,10 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
     margin-bottom: 30px;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+/* Syncopate overall font load */
+
+.syn-text{
+  font-family: Syncopate;
 }
