@@ -6,6 +6,7 @@
 /web/modules/contrib/
 /web/themes/contrib/
 /web/sites/default/config/sync/.htaccess
+/node_modules/swiper/modules
 
 # Ignore environment files
 .env

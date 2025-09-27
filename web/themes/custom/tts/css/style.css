@@ -5,15 +5,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
 @import url(https://db.onlinewebfonts.com/c/771c49f7c4367802d13ab202d164204b?family=Outfit);
 @import url(https://db.onlinewebfonts.com/c/b22bc1a9c9f1ee6fa9c2a1de69be7903?family=Syncopate);
+@import url(https://db.onlinewebfonts.com/c/4abc7b446177a4b533468cd3635fe0b6?family=Abril+Fatface);
 
  * {
     margin: 0;
     padding: 0;
-    font-family: 'Outfit';
+    font-family: 'Outfit','Syncopate','Abril+Fatface';
 }
 
 body {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Outfit','Syncopate','Abril+Fatface';
 }
 
 
@@ -30,42 +31,42 @@ h1 {
     font-size: 35px;
     font-weight: 800;
     line-height: 47px;
-    font-family: 'poltawski nowy';
+    font-family: 'Outfit','Syncopate';
 }
 
 h2 {
     font-size: 32px;
     font-weight: 800;
     line-height: 40px;
-    font-family: 'poltawski nowy';
+    font-family: 'Abril+Fatface';
 }
 
 h3 {
     font-size: 28px;
     font-weight: 800;
     line-height: 36px;
-    font-family: 'poltawski nowy';
+    font-family: 'Outfit','Syncopate';
 }
 
 h4 {
     font-size: 22px;
     font-weight: 700;
     line-height: 30px;
-    font-family: 'poltawski nowy';
+    font-family: 'Outfit','Syncopate';
 }
 
 h5 {
     font-size: 18px;
     font-weight: 700;
     line-height: 25px;
-    font-family: 'poltawski nowy';
+    font-family: 'Outfit','Syncopate';
 }
 
 h6 {
     font-size: 16px;
     font-weight: 500;
     line-height: 23px;
-    font-family: 'poltawski nowy';
+    font-family: 'Outfit','Syncopate';
 }
 
 p {
@@ -387,6 +388,12 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
   }
 }
 
+/* Syncopate overall font load */
+
+.syn-text{
+  font-family: Syncopate;
+}
+
 /* Home Banner Styles */
 .home-banner {
   position: relative;
@@ -436,6 +443,10 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
   color: #333;
   margin-bottom: 2rem;
   text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  font-family: 'Abril+Fatface';
+}
+.home-title span{
+  font-family: 'Abril+Fatface';
 }
 
 .gradient-word {
@@ -556,7 +567,7 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
 
 @media (min-width: 1400px) {
   .home-content {
-    max-width: 1000px;
+    max-width: 950px;
     padding: 0 80px;
   }
   
@@ -3414,7 +3425,7 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
 
 @media (min-width:1420px){
   .pricing-section{
-    padding: 0;
+    /* padding: 0; */
     margin: 0 -30px;
   }
   
@@ -3548,10 +3559,14 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
 }
 
 /* Subtitle */
-.plan-subtitle p {
+/* .plan-subtitle p {
   font-size: 1rem;
-  color: #666;
+  color: #000000;
   margin-bottom: 25px;
+} */
+
+.pricing-card p{
+  color: #000000;
 }
 
 /* Features list */
@@ -3646,7 +3661,7 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
 }
 
 .seo-title {
-  font-size: 22px;
+  font-size: 30px;
   font-weight: 700;
   color: #6a1b9a; /* primary color */
   margin-bottom: 10px;
@@ -3663,13 +3678,6 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
   margin-bottom: 15px;
 }
 
-.seo-subtitle {
-  font-size: 16px;
-  font-weight: 600;
-  color: #333;
-  margin: 10px 0;
-}
-
 .seo-list {
   list-style: none;
   padding: 0;
@@ -3677,18 +3685,10 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
 }
 
 .seo-list li {
-  font-size: 14px;
+  font-size: px;
   margin: 6px 0;
   position: relative;
   padding-left: 22px;
-}
-
-.seo-list li::before {
-  content: "✔";
-  color: #00c853;
-  position: absolute;
-  left: 0;
-  top: 0;
 }
 
 .seo-btn {
@@ -3707,16 +3707,57 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
   opacity: 0.9;
 }
 
+.seo-package-card a:hover {
+   color: #fff;
+}
+
 .field--name-field-seo-wrapper-package{
     display: flex;
     gap: 20px;
     margin-bottom: 30px;
     justify-content: center;
-    flex-wrap: wrap;
 }
 
-/* Syncopate overall font load */
+.field--label-hidden .field__item{
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--secondary-color-green);
+}
 
-.syn-text{
-  font-family: Syncopate;
+.field--label-hidden .field__item p{
+  font-size: 18px;
+
+}
+
+.seo-list .field__item {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 8px;
+}
+
+.seo-list .field__item::before {
+  content: "✔";
+  color: #00c853;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.seo-subtitle .field__item{
+  color: black;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.seo-package-card-wrapper{
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.seo-package-card-wrapper .field--name-field-body P{
+  color: #000000;
+  font-size: 20px;
 }
