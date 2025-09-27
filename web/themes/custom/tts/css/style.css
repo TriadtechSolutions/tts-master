@@ -2309,7 +2309,17 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
     z-index: 4;
     text-align: right;
     display: inline;
+    font-size: 50px;
 } /* Ensure it is above the background */
+
+.title-section h2 span{
+  font-family: Syncopate;
+}
+
+.title-section span {
+  font-size: 50px;
+}
+
 
 .service-grid {
     display: grid;
