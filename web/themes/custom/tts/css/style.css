@@ -31,42 +31,42 @@ h1 {
     font-size: 35px;
     font-weight: 800;
     line-height: 47px;
-    font-family: 'Outfit','Syncopate';
+    font-family: 'Outfit','Syncopate','Abril+Fatface';
 }
 
 h2 {
     font-size: 32px;
     font-weight: 800;
     line-height: 40px;
-    font-family: 'Abril+Fatface';
+    font-family: 'Outfit','Syncopate','Abril+Fatface';
 }
 
 h3 {
     font-size: 28px;
     font-weight: 800;
     line-height: 36px;
-    font-family: 'Outfit','Syncopate';
+    font-family: 'Outfit','Syncopate','Abril+Fatface';
 }
 
 h4 {
     font-size: 22px;
     font-weight: 700;
     line-height: 30px;
-    font-family: 'Outfit','Syncopate';
+    ffont-family: 'Outfit','Syncopate','Abril+Fatface';
 }
 
 h5 {
     font-size: 18px;
     font-weight: 700;
     line-height: 25px;
-    font-family: 'Outfit','Syncopate';
+    font-family: 'Outfit','Syncopate','Abril+Fatface';
 }
 
 h6 {
     font-size: 16px;
     font-weight: 500;
     line-height: 23px;
-    font-family: 'Outfit','Syncopate';
+   font-family: 'Outfit','Syncopate','Abril+Fatface';
 }
 
 p {
@@ -628,12 +628,9 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
 }
 
 .about-title h2 {
-  font-family: 'Montserrat', sans-serif;
   font-weight: 900;
   font-size: clamp(2.5rem, 5vw, 4rem);
   letter-spacing: 1px;
-  color: #1a1a1a;
-  text-transform: uppercase;
   margin: 0;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
@@ -660,6 +657,7 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
 .about-front-image-wrapper img{
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   margin-left: 50px;
+  box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.5);
 }
 
 @media (max-width: 767px) {
@@ -716,7 +714,7 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
   line-height: 2.4;
   margin-bottom: 20px;
   text-align: justify;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  /* text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); */
 }
 
 .about-body-content strong {
@@ -1958,7 +1956,7 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
 }
 
 .detailed-banner-image img {
-  max-width: 100%;
+  /* max-width: 100%; */
   height: 310px;
   border-radius: 6px;
 }
@@ -2595,6 +2593,7 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
   background-clip: text;
   color: transparent;
   line-height: 50px;
+  font-family: 'outfit';
 
 }
 
@@ -3557,7 +3556,6 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
 .pricing-card:hover {
   transform: translateY(-10px);
   box-shadow: 0px 12px 25px rgba(0,0,0,0.15);
- 
 }
 
 /* Title */
@@ -3567,13 +3565,6 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
   margin-bottom: 8px;
   color: #222;
 }
-
-/* Subtitle */
-/* .plan-subtitle p {
-  font-size: 1rem;
-  color: #000000;
-  margin-bottom: 25px;
-} */
 
 .pricing-card p{
   color: #000000;
@@ -3659,7 +3650,7 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
   background: #9c27b0;
 }
 
-
+/* SEO Package starts here */
 .seo-package-card {
   background: #fff;
   border-radius: 12px;
@@ -3668,10 +3659,11 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
   margin: 20px auto;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
 }
 
 .seo-title {
-  font-size: 30px;
+  font-size: 29px;
   font-weight: 700;
   color: #6a1b9a; /* primary color */
   margin-bottom: 10px;
@@ -3713,14 +3705,26 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
   transition: 0.3s;
 }
 
-.seo-btn:hover {
+.seo-package-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 12px 25px rgba(0,0,0,0.15);
+}
+
+.seo-package-card a:hover,
+.seo-package-card a:focus {
+  background: linear-gradient(90deg, #9c27b0, #673ab7);
+  transform: scale(1.05);
   opacity: 0.9;
+  color: #fff;
 }
 
 .seo-package-card a:hover {
    color: #fff;
 }
-
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 12px 25px rgba(0,0,0,0.15);
+}
 .field--name-field-seo-wrapper-package{
     display: flex;
     gap: 20px;
@@ -3728,15 +3732,8 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
     justify-content: center;
 }
 
-.field--label-hidden .field__item{
-    font-size: 20px;
-    font-weight: 400;
-    color: var(--secondary-color-green);
-}
-
-.field--label-hidden .field__item p{
-  font-size: 18px;
-
+.seo-subtitle .field--name-field-title {
+  font-size: 21px;
 }
 
 .seo-list .field__item {
@@ -3769,5 +3766,131 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
 
 .seo-package-card-wrapper .field--name-field-body P{
   color: #000000;
-  font-size: 20px;
+  font-size: 19px;
+}
+
+/* Tablet Styles (768px - 1024px) */
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  .field--name-field-seo-wrapper-package {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .seo-package-card {
+    max-width: 320px;
+    margin: 15px;
+    padding: 18px;
+  }
+  
+  .seo-title {
+    font-size: 26px;
+  }
+  
+  .seo-subtitle .field--name-field-title {
+    font-size: 19px;
+  }
+  
+  .seo-package-card-wrapper .field--name-field-body P {
+    font-size: 17px;
+  }
+}
+
+/* Mobile and Small Devices (max-width: 767px) */
+@media screen and (max-width: 767px) {
+  .field--name-field-seo-wrapper-package {
+    display: flex;
+    gap: 0;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .seo-package-card {
+    max-width: 100%;
+    width: 100%;
+    margin: 15px auto;
+    padding: 20px 15px;
+    box-sizing: border-box;
+  }
+  
+  .seo-title {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+  
+  .seo-description {
+    font-size: 13px;
+    margin-bottom: 18px;
+  }
+  
+  .seo-subtitle .field--name-field-title {
+    font-size: 18px;
+  }
+  
+  .seo-list li {
+    font-size: 13px;
+    margin: 5px 0;
+    padding-left: 20px;
+  }
+  
+  .seo-list .field__item {
+    padding-left: 22px;
+    margin-bottom: 6px;
+  }
+  
+  .seo-btn {
+    padding: 12px 24px;
+    margin-top: 18px;
+    font-size: 14px;
+    width: auto;
+    display: inline-block;
+  }
+  
+  .seo-package-card-wrapper .field--name-field-body P {
+    font-size: 16px;
+  }
+  
+  .seo-section {
+    margin-bottom: 12px;
+  }
+}
+
+/* Extra Small Devices (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .seo-package-card {
+    margin: 10px auto;
+    padding: 15px 12px;
+    border-radius: 10px;
+  }
+  
+  .seo-title {
+    font-size: 22px;
+  }
+  
+  .seo-description {
+    font-size: 12px;
+  }
+  
+  .seo-subtitle .field--name-field-title {
+    font-size: 17px;
+  }
+  
+  .seo-list li {
+    font-size: 12px;
+  }
+  
+  .seo-list .field__item {
+    padding-left: 20px;
+  }
+  
+  .seo-btn {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+  
+  .seo-package-card-wrapper .field--name-field-body P {
+    font-size: 15px;
+  }
 }
