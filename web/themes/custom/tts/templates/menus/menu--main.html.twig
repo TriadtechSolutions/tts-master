@@ -12,12 +12,17 @@
 {% for item in items %}
   <li class="nav-item{% if item.is_collapsed %} has-submenu{% endif %}{% if item.in_active_trail %} active-trail{% endif %}" {{ item.attributes }}>
     {# Render the main menu link #}
+    {% if item.url.getRouteName() != '<nolink>' %}
     <a href="{{ item.url }}" class="nav-link nav-link--{{ item.title|lower|replace({' ': ''}) }}">
       {{ item.title }}
-      {# Add dropdown indicator if has submenu #}
+    {% else %}
+    <span class="nav-link nav-link--{{ item.title|lower|replace({' ': ''}) }}">
+      {{ item.title }}
       {% if item.is_expanded %}
         <span class="dropdown-arrow">▼</span>
       {% endif %}
+    {% endif %}
+    </span>
     </a>
     
     {# Render submenu if item is collapsed and has children in 'below' #}

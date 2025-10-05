@@ -96,5 +96,32 @@ $(function() {
       }
     }
   };
+
+  Drupal.behaviors.customDropdown = {
+    attach: function (context, settings) {
+      $(".nav-item .dropdown-arrow", context).once("customDropdown").on("click", function (e) {
+        e.preventDefault();
+        const parent = $(this).closest(".nav-item");
+
+        if ($(window).width() <= 992) {
+          parent.toggleClass("open");
+
+          // Close all other open dropdowns
+          $(".nav-item.open").each(function () {
+            if (!$(this).is(parent)) {
+              $(this).removeClass("open");
+            }
+          });
+        }
+      });
+
+      // Close when clicking outside
+      $(document).once("customDropdownOutside").on("click", function (e) {
+        if ($(e.target).closest(".nav-item").length === 0) {
+          $(".nav-item.open").removeClass("open");
+        }
+      });
+    }
+  };
 })(jQuery, Drupal);
 
