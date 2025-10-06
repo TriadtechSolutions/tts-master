@@ -1,4 +1,4 @@
-{# <section class="testimonials-section">
+<section class="testimonials-section">
   {% if content.field_bg_image['#items'] %}
     <div class="testimonials-bg-image-wrapper">
       <img src="{{ file_url(content.field_bg_image['#items'].entity.field_media_image.entity.fileuri) }}" 
@@ -29,42 +29,4 @@
       {% endfor %}
     </div>
   </div>
-</section> #}
-
-<section class="testimonials-section">
-  {% if content.field_bg_image['#items'] %}
-    <div class="testimonials-bg-image-wrapper">
-      <img src="{{ file_url(content.field_bg_image['#items'].entity.field_media_image.entity.fileuri) }}" 
-           alt="{{ content.field_bg_image['#items'].entity.field_media_image.alt }}" 
-           class="testimonials-bg-image">
-    </div>
-  {% endif %}
-
-  <div class="testimonials-container">
-    <div class="testimonials-header">
-      {% if content.field_title %}
-        <h2 class="testimonials-title">{{ content.field_title.0 }}</h2>
-      {% endif %}
-      {% if content.field_subtitle %}
-        <p class="testimonials-subtitle">{{ content.field_subtitle.0 }}</p>
-      {% endif %}
-    </div>
-  
-    {# Swiper structure starts here #}
-    <div class="swiper-container testimonial-swiper">
-      <div class="swipper-wrapper">
-        {% for item in content.field_testimonial['#items'] %}
-          {% if item.entity %}
-            <div class="swiper-slide">
-              <div class="testimonial-card">
-                <div class="testimonial-content">
-                  {{ item.entity.field_body.value|raw }}
-                </div>
-              </div>
-            </div>
-          {% endif %}
-        {% endfor %}
-      </div>
-  </div>
 </section>
-

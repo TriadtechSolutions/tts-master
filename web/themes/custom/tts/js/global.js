@@ -63,38 +63,3 @@ $(function() {
 
 })(jQuery,Drupal);
 
-(function ($, Drupal) {
-  'use strict';
-
-  Drupal.behaviors.mobileTestimonialSwiper = {
-    attach: function (context, settings) {
-      const $testimonialContainer = $(".testimonial-swiper", context);
-
-      if ($testimonialContainer.length) {
-        const testimonialCount = $testimonialContainer.find(".swiper-slide").length;
-
-        // Mobile only
-        if ($(window).width() < 768 && testimonialCount > 1) {
-          new Swiper(".testimonial-swiper", {
-            loop: true,
-            slidesPerView: 1,
-            spaceBetween: 20,
-            pagination: {
-              el: ".swiper-pagination",
-              clickable: true,
-            },
-            navigation: {
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
-            },
-            autoplay: {
-              delay: 3500,
-              disableOnInteraction: false,
-            },
-          });
-        }
-      }
-    }
-  };
-})(jQuery, Drupal);
-
