@@ -20,7 +20,7 @@
     <div class="testimonials-grid">
       {% for item in content.field_testimonial ['#items']%}
         {% if item.entity %}
-          <div class="testimonial-card">
+          <div class="testimonial-card swiper-slide">
             <div class="testimonial-content">
               {{ item.entity.field_body.value|raw }}
             </div>

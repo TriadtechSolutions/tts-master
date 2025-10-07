@@ -1188,11 +1188,11 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
     line-height: 1.4;
   }
 }
+
 /* ===== TESTIMONIAL SECTION ===== */
 
 .testimonials-section {
   width: 99.6vw;
-  /* min-height: 75vh; */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1210,6 +1210,7 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
   width: 100%;
   height: 100%;
   z-index: 1;
+  overflow: hidden;
 }
 
 .testimonials-bg-image {
@@ -1237,7 +1238,6 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
   font-weight: bold;
   color: #000000;
   margin: 0 0 20px 0;
-  /* text-transform: uppercase; */
   letter-spacing: 3px;
   font-family: Syncopate;
   text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
@@ -1309,9 +1309,9 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
   font-weight: normal;
 }
 
-/* ===== RESPONSIVE BREAKPOINTS ===== */
+/* Testimonial Responsive */
 
-@media screen and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   .testimonials-section {
     padding: 60px 0 80px 0;
   }
@@ -1358,7 +1358,7 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
   }
 }
 
-@media screen and (max-width: 767px) {
+@media (min-width: 429px) and (max-width: 767px) {
   .testimonials-section {
     padding: 50px 0 70px 0;
     width: 100vw;
@@ -1385,7 +1385,7 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
   }
   
   .testimonials-grid {
-    gap: 35px;
+    gap: 0px;
     margin-top: 60px;
     max-width: 500px;
   }
@@ -1421,12 +1421,12 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
 
   .testimonials-bg-image {
     width: 100%;
-    height: 66%;
+    height: 100%;
     object-fit: fill;
   }
 }
 
-@media screen and (max-width: 430px) {
+@media (min-width: 389px) and (max-width: 430px) {
   .testimonials-container {
     max-width: 100%;
     padding: 0 12px;
@@ -1442,7 +1442,7 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
   }
   
   .testimonials-grid {
-    gap: 30px;
+    gap: 0px;
     margin-top: 50px;
     max-width: 400px;
   }
@@ -1467,7 +1467,7 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
   }
 }
 
-@media screen and (max-width: 390px) {
+@media (min-width: 359px) and (max-width: 390px) {
   .testimonials-section {
     padding: 40px 0 60px 0;
   }
@@ -1492,7 +1492,7 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
   }
   
   .testimonials-grid {
-    gap: 25px;
+    gap: 0px;
     margin-top: 45px;
     max-width: 350px;
   }
@@ -1523,7 +1523,7 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
 
   .testimonials-bg-image {
     width: 100%;
-    height: 66%;
+    height: 100%;
     object-fit: fill;
   }
 }
@@ -1550,7 +1550,7 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
   }
   
   .testimonials-grid {
-    gap: 20px;
+    gap: 0px;
     margin-top: 40px;
     max-width: 320px;
   }
@@ -2464,7 +2464,7 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
     }
 
     .title-section h2 {
-        font-size: 50px;
+        font-size: 40px;
     }
 
     .content-wrapper {
@@ -2521,6 +2521,12 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
   .what-we-do-section .container{
     padding: 0 1px;
   }
+ }
+
+ @media (max-width: 767px) {
+  .title-section span {
+  font-size: 40px;
+}
  }
 
  /* Service Cards Grid */

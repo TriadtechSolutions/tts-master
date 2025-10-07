@@ -52,6 +52,66 @@
   }
 };
 
+//Slider for Testimonial//
+Drupal.behaviors.mobileTestimonialsSwiper = {
+    attach: function (context, settings) {
+      $(document).ready(function () {
+        const $grid = $('.testimonials-grid', context);
+        let swiperInstance = null;
+
+        function initSwiper() {
+          const windowWidth = $(window).width();
+          if (windowWidth < 768 && !swiperInstance) {
+            if (!$grid.hasClass('swiper-initialized')) {
+
+              $grid.addClass('swiper-container');
+              $grid.find('.testimonial-card').addClass('swiper-slide');
+
+              if (!$grid.find('.swiper-wrapper').length) {
+                $grid.wrapInner('<div class="swiper-wrapper"></div>');
+              }
+
+              swiperInstance = new Swiper('.testimonials-grid.swiper-container', {
+                slidesPerView: 1,
+                spaceBetween: 150,
+                loop: true,
+                pagination: {
+                  el: '.swiper-pagination',
+                  clickable: true,
+                },
+                autoplay: {
+                  delay: 3000,
+                  disableOnInteraction: false,
+                },
+                speed: 600, // smooth slide speed
+              });
+            }
+          }
+
+          // TABLET & DESKTOP — destroy swiper
+          else if (windowWidth >= 768 && swiperInstance) {
+            swiperInstance.destroy(true, true);
+            swiperInstance = null;
+
+            const $wrapper = $grid.find('.swiper-wrapper');
+            if ($wrapper.length) {
+              $wrapper.children().removeClass('swiper-slide').unwrap();
+            }
+
+            $grid.removeClass('swiper-container swiper-initialized');
+          }
+        }
+        initSwiper();
+
+        let resizeTimer;
+        $(window).on('resize', function () {
+          clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(initSwiper, 300);
+        });
+      });
+    },
+  };
+
 $(function() {
   var colors = ["card-blue", "card-orange", "card-red", "card-green", "card-purple"];
   $('.pricing-card, .seo-package-card').each(function(index) {
