@@ -1,106 +1,102 @@
 /**
  * @file
  * Global utilities.
- *
  */
-(function ($, Drupal) {
+(function ($, Drupal, once) {
 
   'use strict';
 
+  // ✅ Close mobile menu
   Drupal.behaviors.tts = {
-    attach: function (context, settings) {
-
-      jQuery(document).ready(function ($) {
+    attach: function (context) {
+      once('ttsCloseMenu', '#CollapsingNavbar', context).forEach(() => {
         const $menu = $('#CollapsingNavbar');
-        const $closeBtn = $('.close-menu-btn');
-
-        // Close menu
-        $closeBtn.on('click', function () {
-          if ($(window).width() <= 1024) {
+        $('.close-menu-btn').on('click', function () {
+          if (window.innerWidth <= 1024) {
             $menu.removeClass('show');
           }
         });
       });
-
     }
   };
 
+  // ✅ General swiper
   Drupal.behaviors.swiperInit = {
-  attach: function (context, settings) {
-    new Swiper(".swiper-container", {
-      loop: true,
-      slidesPerView: 3,
-      spaceBetween: 30,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      autoplay: {
-        delay: 3500,   // 3 seconds per slide
-        disableOnInteraction: false, // keep autoplay even if user clicks
-      },
-      breakpoints: {
-        1024: { slidesPerView: 3 },
-        768: { slidesPerView: 2 },
-        320: { slidesPerView: 1 },
-      },
-    });
-  }
-};
+    attach: function () {
+      once('mainSwiper', '.swiper-container').forEach(() => {
+        new Swiper(".swiper-container", {
+          loop: true,
+          slidesPerView: 3,
+          spaceBetween: 30,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+          autoplay: {
+            delay: 3500,
+            disableOnInteraction: false,
+          },
+          breakpoints: {
+            1024: { slidesPerView: 3 },
+            768: { slidesPerView: 2 },
+            320: { slidesPerView: 1 },
+          }
+        });
+      });
+    }
+  };
 
-//Slider for Testimonial//
-Drupal.behaviors.mobileTestimonialsSwiper = {
-    attach: function (context, settings) {
-      $(document).ready(function () {
-        const $grid = $('.testimonials-grid', context);
+  // ✅ Testimonials slider (mobile only)
+  Drupal.behaviors.mobileTestimonialsSwiper = {
+    attach: function (context) {
+      once('mobileTestimonialSwiper', '.testimonials-grid', context).forEach(($grid) => {
+        
         let swiperInstance = null;
+        const $gridEl = $($grid);
 
         function initSwiper() {
-          const windowWidth = $(window).width();
-          if (windowWidth < 768 && !swiperInstance) {
-            if (!$grid.hasClass('swiper-initialized')) {
+          const width = window.innerWidth;
 
-              $grid.addClass('swiper-container');
-              $grid.find('.testimonial-card').addClass('swiper-slide');
+          if (width < 768 && !swiperInstance) {
+            $gridEl.addClass('swiper-container');
+            $gridEl.find('.testimonial-card').addClass('swiper-slide');
 
-              if (!$grid.find('.swiper-wrapper').length) {
-                $grid.wrapInner('<div class="swiper-wrapper"></div>');
-              }
-
-              swiperInstance = new Swiper('.testimonials-grid.swiper-container', {
-                slidesPerView: 1,
-                spaceBetween: 150,
-                loop: true,
-                pagination: {
-                  el: '.swiper-pagination',
-                  clickable: true,
-                },
-                autoplay: {
-                  delay: 3000,
-                  disableOnInteraction: false,
-                },
-                speed: 600, // smooth slide speed
-              });
+            if (!$gridEl.find('.swiper-wrapper').length) {
+              $gridEl.wrapInner('<div class="swiper-wrapper"></div>');
             }
+
+            swiperInstance = new Swiper('.testimonials-grid.swiper-container', {
+              loop: true,
+              slidesPerView: 1,
+              spaceBetween: 150,
+              pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+              },
+              autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+              },
+              speed: 600,
+            });
           }
 
-          // TABLET & DESKTOP — destroy swiper
-          else if (windowWidth >= 768 && swiperInstance) {
+          else if (width >= 768 && swiperInstance) {
             swiperInstance.destroy(true, true);
             swiperInstance = null;
 
-            const $wrapper = $grid.find('.swiper-wrapper');
+            const $wrapper = $gridEl.find('.swiper-wrapper');
             if ($wrapper.length) {
               $wrapper.children().removeClass('swiper-slide').unwrap();
             }
-
-            $grid.removeClass('swiper-container swiper-initialized');
+            $gridEl.removeClass('swiper-container swiper-initialized');
           }
         }
+
         initSwiper();
 
         let resizeTimer;
@@ -109,17 +105,43 @@ Drupal.behaviors.mobileTestimonialsSwiper = {
           resizeTimer = setTimeout(initSwiper, 300);
         });
       });
-    },
+    }
   };
 
-$(function() {
-  var colors = ["card-blue", "card-orange", "card-red", "card-green", "card-purple"];
-  $('.pricing-card, .seo-package-card').each(function(index) {
-    var colorClass = colors[index % colors.length];
-    $(this).addClass(colorClass);
-  });
-});
+  // ✅ Dynamic card colors
+  Drupal.behaviors.cardColors = {
+    attach: function () {
+      once('addCardColors', '.pricing-card, .seo-package-card').forEach((el, index) => {
+        const classes = ["card-blue", "card-orange", "card-red", "card-green", "card-purple"];
+        $(el).addClass(classes[index % classes.length]);
+      });
+    }
+  };
 
+  // ✅ Mobile dropdown menu
+  Drupal.behaviors.customDropdown = {
+    attach: function (context) {
+      // Open/close toggle
+      once('customDropdown', '.nav-item:has(.dropdown-menu)', context).forEach((el) => {
+        $(el).on('click', function (e) {
+          e.preventDefault();
+          if (window.innerWidth <= 992) {
+            const $parent = $(this).closest('.nav-item');
+            $parent.toggleClass('open');
+            $('.nav-item.open').not($parent).removeClass('open');
+          }
+        });
+      });
 
-})(jQuery,Drupal);
+      // Click outside to close
+      once('customDropdownOutside', 'body', context).forEach(() => {
+        $(document).on('click', function (e) {
+          if (!$(e.target).closest('.nav-item').length) {
+            $('.nav-item.open').removeClass('open');
+          }
+        });
+      });
+    }
+  };
 
+})(jQuery, Drupal, once);

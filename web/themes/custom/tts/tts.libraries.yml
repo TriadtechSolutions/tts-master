@@ -8,6 +8,9 @@ global-styling:
       css/colors.css: {}
   dependencies:
     - core/jquery
+    - core/once
+    - core/drupal
+    - core/drupalSettings
 bootstrap:
   js:
     /libraries/popperjs/dist/umd/popper.min.js: { weight: -19 }
