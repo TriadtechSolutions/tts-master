@@ -124,7 +124,6 @@
       // Open/close toggle
       once('customDropdown', '.nav-item:has(.dropdown-menu)', context).forEach((el) => {
         $(el).on('click', function (e) {
-          e.preventDefault();
           if (window.innerWidth <= 992) {
             const $parent = $(this).closest('.nav-item');
             $parent.toggleClass('open');
