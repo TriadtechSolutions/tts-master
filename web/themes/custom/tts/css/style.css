@@ -3279,7 +3279,7 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
 
 .leadership-section{
   width: 99.6vw;
-  height: 100vh;
+  height: auto;
   margin-left: calc(-50vw + 50%);
   position: relative;
   padding: 250px 0;
