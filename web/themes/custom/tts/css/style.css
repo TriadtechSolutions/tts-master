@@ -1676,6 +1676,7 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
 
 .socialmedia_icons {
   margin-left: 11px;
+  display: flex;
 }
 
 .site-footer h3 {
@@ -3994,5 +3995,5 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
 }
 
 .socialmedia_icons a {
-  padding: 5px
+  padding: 8px
 }
