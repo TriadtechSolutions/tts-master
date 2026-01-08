@@ -1997,7 +1997,7 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
   background: linear-gradient(to right, #000000, #6aaa4c);
   background-clip: text;
   color: transparent;
-  margin-top: 170px;
+  margin-top: 100px;
   font-size: 40px;
   font-weight: bold;
 }
@@ -2404,6 +2404,11 @@ li.nav-item:hover > ul.submenu.dropdown-menu {
     z-index: 2;
     
 }
+
+.swiper-wrapper {
+  transition-timing-function: linear !important;
+}
+
 
 /* Desktop (≥1024px): split into two lines */
 @media (min-width: 1024px) {

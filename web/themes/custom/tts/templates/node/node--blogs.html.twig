@@ -1,3 +1,124 @@
-<article class="ts-text-center ts-font-extrabold ts-text-gray-900 ts-text-2xl ts-sm:text-3xl ts-md:text-4xl ts-lg:text-5xl ts-xl:text-6xl ts-py-[100px] ts-px-4">
-  {{ content.body.0['#text'] }}
+<article class="ts-bg-grey ts-min-h-screen">
+  {# Header Section with Title and Author Info #}
+  <div class="ts-bg-gradient-to-br ts-from-green-50 ts-to-blue-50 ts-py-4 ts-px-3 xs:ts-py-6 xs:ts-px-4 sm:ts-py-8 sm:ts-px-6 md:ts-py-10 md:ts-px-8 lg:ts-py-12 lg:ts-px-10 ts-mt-[50px] xs:ts-mt-[60px] sm:ts-mt-[65px] md:ts-mt-[70px] lg:ts-mt-[75px]">
+    <div class="ts-max-w-4xl ts-mx-auto">
+
+      {# Category Badge and Read Time #}
+      <div class="ts-flex ts-flex-wrap ts-items-center ts-gap-2 xs:ts-gap-2.5 sm:ts-gap-3 ts-mb-3 xs:ts-mb-4 sm:ts-mb-5">
+        {% if content.field_tags.0 %}
+          <span class="ts-inline-block ts-bg-emerald-500 ts-text-white ts-text-[10px] xs:ts-text-xs sm:ts-text-sm ts-font-semibold ts-px-2 ts-py-0.5 xs:ts-px-2.5 xs:ts-py-1 sm:ts-px-3 sm:ts-py-1 ts-rounded-full">
+            {{ content.field_tags.0 }}
+          </span>
+        {% endif %}
+        {% if content.field_time_taken %}
+          <span class="ts-flex ts-items-center ts-text-[10px] xs:ts-text-xs sm:ts-text-sm ts-text-gray-600">
+            <svg class="ts-w-3 ts-h-3 xs:ts-w-3.5 xs:ts-h-3.5 sm:ts-w-4 sm:ts-h-4 ts-mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" stroke-width="2"/>
+              <path stroke-linecap="round" stroke-width="2" d="M12 6v6l4 2"/>
+            </svg>
+            {{ content.field_time_taken }}
+          </span>
+        {% endif %}
+      </div>
+
+      {# Blog Title #}
+      <h1 class="ts-text-xl ts-leading-tight xs:ts-text-2xl xs:ts-leading-tight sm:ts-text-3xl sm:ts-leading-tight md:ts-text-4xl md:ts-leading-tight lg:ts-text-5xl lg:ts-leading-tight ts-font-bold ts-text-gray-900 ts-mb-4 xs:ts-mb-5 sm:ts-mb-6 md:ts-mb-7">
+        {{ label }}
+      </h1>
+
+      {# Author Info #}
+      <div class="ts-flex ts-items-center ts-gap-2 xs:ts-gap-2.5 sm:ts-gap-3 ts-mb-0">
+        <div class="ts-w-10 ts-h-10 xs:ts-w-11 xs:ts-h-11 sm:ts-w-12 sm:ts-h-12 md:ts-w-14 md:ts-h-14 ts-rounded-full ts-bg-gray-300 ts-flex ts-items-center ts-justify-center ts-flex-shrink-0">
+          {# Static User Icon #}
+          <svg class="ts-w-5 ts-h-5 xs:ts-w-6 xs:ts-h-6 sm:ts-w-7 sm:ts-h-7 md:ts-w-8 md:ts-h-8 ts-text-gray-600" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+          </svg>
+        </div>
+        <div class="ts-min-w-0">
+          {% if content.field_author_name %}
+            <p class="ts-font-semibold ts-text-gray-900 ts-text-sm xs:ts-text-base sm:ts-text-lg ts-truncate">{{ content.field_author_name }}</p>
+          {% endif %}
+          <p class="ts-text-xs xs:ts-text-sm sm:ts-text-base ts-text-gray-600 ts-truncate">{{ node.createdtime|date('F d, Y') }}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  {# Featured Image Section #}
+  <div class="ts-max-w-4xl ts-mx-auto ts-px-3 xs:ts-px-4 sm:ts-px-6 md:ts-px-8 lg:ts-px-10 ts-py-4 xs:ts-py-5 sm:ts-py-6 md:ts-py-8">
+    {% if content.field_image %}
+      <div class="ts-rounded-md xs:ts-rounded-lg sm:ts-rounded-xl ts-overflow-hidden">
+        {{ content.field_image }}
+      </div>
+    {% endif %}
+  </div>
+
+  {# Blog Content Section #}
+<div class="ts-max-w-4xl ts-mx-auto 
+            ts-px-3 xs:ts-px-4 sm:ts-px-6 md:ts-px-8 lg:ts-px-10 
+            ts-pb-8 xs:ts-pb-10 sm:ts-pb-12 md:ts-pb-16 lg:ts-pb-20">
+
+  <div class="ts-bg-white 
+              ts-rounded-md xs:ts-rounded-lg sm:ts-rounded-xl 
+              ts-shadow-sm" >
+              
+ <div class="ts-prose ts-prose-lg ts-max-w-none ts-text-black
+
+            /* PARAGRAPH */
+            xs:[&_p]:ts-text-[17px]
+            sm:[&_p]:ts-text-[18px]
+            md:[&_p]:ts-text-[19px]
+            lg:[&_p]:ts-text-[20px]
+
+            /* STRONG / BOLD */
+            xs:[&_strong]:ts-text-[17px]
+            sm:[&_strong]:ts-text-[18px]
+            md:[&_strong]:ts-text-[19px]
+            lg:[&_strong]:ts-text-[20px]
+            [&_strong]:ts-font-semibold
+            xs:[&_b]:ts-text-[17px]
+            sm:[&_b]:ts-text-[18px]
+            md:[&_b]:ts-text-[19px]
+            lg:[&_b]:ts-text-[20px]
+            [&_b]:ts-font-semibold
+
+            /* LIST ITEMS */
+            xs:[&_li]:ts-text-[17px]
+            sm:[&_li]:ts-text-[18px]
+            md:[&_li]:ts-text-[19px]
+            lg:[&_li]:ts-text-[20px]
+
+            /* LINKS */
+            [&_a]:ts-text-blue-600
+            [&_a:hover]:ts-text-blue-800
+            [&_a]:ts-underline
+
+            /* ITALICS */
+            xs:[&_em]:ts-text-[17px]
+            sm:[&_em]:ts-text-[18px]
+            md:[&_em]:ts-text-[19px]
+            lg:[&_em]:ts-text-[20px]
+            [&_em]:ts-italic
+
+            /* BLOCKQUOTE */
+            [&_blockquote]:ts-text-[18px]
+            [&_blockquote]:ts-italic
+            [&_blockquote]:ts-border-l-4
+            [&_blockquote]:ts-pl-4
+
+            /* LINE HEIGHT */
+            [&_p]:ts-leading-relaxed
+            [&_li]:ts-leading-relaxed">
+
+
+      {{ content.body }}
+
+    </div>
+  </div>
+</div>
+
+
+
 </article>
+
