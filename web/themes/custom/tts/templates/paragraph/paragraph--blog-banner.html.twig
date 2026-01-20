@@ -1,0 +1,27 @@
+<section class="blog-banner">
+  <div class="blog-banner__container">
+
+    {# Main banner title #}
+    {% if content.field_title %}
+      <h1 class="blog-banner__title">
+        {{ content.field_title }}
+      </h1>
+    {% endif %}
+
+    {# Banner body text #}
+    {% if content.field_body %}
+      <div class="blog-banner__body">
+        {{ content.field_body }}
+      </div>
+    {% endif %}
+
+    {# Icon + small title row #}
+    {% if content.field_blog_feature %}
+      <div class="blog-banner__features">
+        {{ content.field_blog_feature }}
+      </div>
+    {% endif %}
+
+
+  </div>
+</section>

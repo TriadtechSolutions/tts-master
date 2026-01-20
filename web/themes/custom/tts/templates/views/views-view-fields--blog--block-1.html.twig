@@ -1,0 +1,46 @@
+<article class="blog-card">
+
+  {# Image Section #}
+  <div class="blog-image-wrapper">
+    {{ fields.field_image.content }}
+
+    {% if fields.field_tags.content %}
+      <span class="blog-tag">
+        {{ fields.field_tags.content }}
+      </span>
+    {% endif %}
+  </div>
+
+  <div class="blog-body">
+
+    {# Title #}
+    <h3 class="blog-title">
+      <a href="{{ fields.view_node.content }}">
+        {{ fields.title.content }}
+      </a>
+    </h3>
+
+    {# Summary #}
+    <p class="blog-summary">
+      {{ fields.field_summary.content }}
+    </p>
+
+    {# Meta Info #}
+    <div class="blog-meta">
+      <span class="blog-author">
+        By {{ fields.field_author_name.content }}
+      </span>
+
+      <span class="blog-time">
+        ⏱ {{ fields.field_time_taken.content }}
+      </span>
+    </div>
+
+    {# Read More #}
+    <a class="read-more" href="{{ fields.view_node.content }}">
+      Read More →
+    </a>
+
+  </div>
+
+</article>
