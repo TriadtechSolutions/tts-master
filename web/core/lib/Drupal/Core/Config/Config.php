@@ -209,8 +209,6 @@ class Config extends StorableConfigBase {
         // Ensure that the schema wrapper has the latest data.
         $this->schemaWrapper = NULL;
         $this->data = $this->castValue(NULL, $this->data);
-        // Reclaim the memory used by the schema wrapper.
-        $this->schemaWrapper = NULL;
       }
       else {
         foreach ($this->data as $key => $value) {

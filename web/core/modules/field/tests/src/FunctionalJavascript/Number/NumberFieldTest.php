@@ -50,7 +50,7 @@ class NumberFieldTest extends WebDriverTestBase {
     $type = $this->randomMachineName();
     $float_field = $this->randomMachineName();
     $integer_field = $this->randomMachineName();
-    $thousand_separators = ['', '.', ',', ' ', mb_chr(8201, 'UTF-8'), "'"];
+    $thousand_separators = ['', '.', ',', ' ', chr(8201), "'"];
     $decimal_separators = ['.', ','];
     $prefix = $this->randomMachineName();
     $suffix = $this->randomMachineName();

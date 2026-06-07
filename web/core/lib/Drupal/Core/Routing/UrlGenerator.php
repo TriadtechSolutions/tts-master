@@ -320,16 +320,13 @@ class UrlGenerator implements UrlGeneratorInterface {
       // so we need to encode them as they are not used for this purpose here
       // otherwise we would generate a URI that, when followed by a user agent
       // (e.g. browser), does not match this route
-      $segments = explode('/', $path);
-      foreach ($segments as $i => $segment) {
-        if ($segment === '.') {
-          $segments[$i] = '%2E';
-        }
-        elseif ($segment === '..') {
-          $segments[$i] = '%2E%2E';
-        }
+      $path = strtr($path, ['/../' => '/%2E%2E/', '/./' => '/%2E/']);
+      if (str_ends_with($path, '/..')) {
+        $path = substr($path, 0, -2) . '%2E%2E';
       }
-      $path = implode('/', $segments);
+      elseif (str_ends_with($path, '/.')) {
+        $path = substr($path, 0, -1) . '%2E';
+      }
     }
 
     if (!empty($options['prefix'])) {

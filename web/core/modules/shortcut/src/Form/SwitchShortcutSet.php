@@ -103,7 +103,6 @@ class SwitchShortcutSet extends FormBase {
       ];
       $form['id'] = [
         '#type' => 'machine_name',
-        '#access' => $add_access,
         '#machine_name' => [
           'exists' => [$this, 'exists'],
           'replace_pattern' => '[^a-z0-9-]+',

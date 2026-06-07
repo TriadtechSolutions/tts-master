@@ -516,7 +516,7 @@ class DateTimePlus {
    *   otherwise.
    */
   public function hasErrors() {
-    return (bool) count($this->errors);
+    return (boolean) count($this->errors);
   }
 
   /**

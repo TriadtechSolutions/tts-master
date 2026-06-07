@@ -54,14 +54,6 @@ class InstallerBrokenDatabasePortSettingsTest extends InstallerTestBase {
   }
 
   /**
-   * {@inheritdoc}
-   */
-  protected function setUpRequirementsProblem(): void {
-    // We are testing an update requirements problem, so we need to override the
-    // parent method.
-  }
-
-  /**
    * Tests the expected requirements problem.
    */
   public function testRequirementsProblem(): void {

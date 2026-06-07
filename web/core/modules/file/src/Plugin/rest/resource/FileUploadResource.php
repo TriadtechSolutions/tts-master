@@ -103,7 +103,7 @@ class FileUploadResource extends ResourceBase {
    */
   protected array $deprecatedProperties = [
     'currentUser' => 'current_user',
-    'mimeTypeGuesser' => 'file.mime_type.guesser',
+    'mimeTypeGuesser' => 'mime_type.guesser',
     'token' => 'token',
     'lock' => 'lock',
     'eventDispatcher' => 'event_dispatcher',

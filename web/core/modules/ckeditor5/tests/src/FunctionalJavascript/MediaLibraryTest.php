@@ -174,7 +174,9 @@ class MediaLibraryTest extends WebDriverTestBase {
       $this->assertSame($expected_tab_order[$key], $tab->getText());
     }
 
+    $assert_session->pageTextContains('0 of 1 item selected');
     $assert_session->elementExists('css', '.js-media-library-item')->click();
+    $assert_session->pageTextContains('1 of 1 item selected');
     $assert_session->elementExists('css', '.ui-dialog-buttonpane')->pressButton('Insert selected');
     $this->assertNotEmpty($assert_session->waitForElementVisible('css', $media_preview_selector, 1000));
     $xpath = new \DOMXPath($this->getEditorDataAsDom());

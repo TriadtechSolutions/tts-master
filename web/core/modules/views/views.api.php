@@ -8,7 +8,6 @@
 use Drupal\Core\Language\LanguageInterface;
 use Drupal\views\Plugin\views\cache\CachePluginBase;
 use Drupal\views\Plugin\views\PluginBase;
-use Drupal\views\Plugin\views\query\QueryPluginBase;
 use Drupal\views\ViewExecutable;
 
 /**

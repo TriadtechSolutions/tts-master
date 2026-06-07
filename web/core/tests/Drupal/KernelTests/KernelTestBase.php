@@ -1042,7 +1042,7 @@ abstract class KernelTestBase extends TestCase implements ServiceProviderInterfa
    *
    * @return array
    */
-  protected static function getModulesToEnable($class) {
+  private static function getModulesToEnable($class) {
     $modules = [];
     while ($class) {
       if (property_exists($class, 'modules')) {

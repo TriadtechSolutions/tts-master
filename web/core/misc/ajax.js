@@ -1335,16 +1335,14 @@
       // Parse response.data into an element collection.
       const parseHTML = (htmlString) => {
         const fragment = document.createDocumentFragment();
-        // Create a temporary template element.
-        const template = fragment.appendChild(
-          document.createElement('template'),
-        );
+        // Create a temporary div element
+        const tempDiv = fragment.appendChild(document.createElement('div'));
 
-        // Set the innerHTML of the template to the provided HTML string.
-        template.innerHTML = htmlString;
+        // Set the innerHTML of the div to the provided HTML string
+        tempDiv.innerHTML = htmlString;
 
-        // Return the contents of the temporary template.
-        return template.content.childNodes;
+        // Return the contents of the temporary div
+        return tempDiv.childNodes;
       };
 
       let $newContent = $(parseHTML(response.data));
@@ -1869,7 +1867,23 @@
      *   Selector to use.
      */
     scrollTop(ajax, response) {
-      document.querySelector(response.selector)?.scrollIntoView();
+      const offset = $(response.selector).offset();
+      // We can't guarantee that the scrollable object should be
+      // the body, as the element could be embedded in something
+      // more complex such as a modal popup. Recurse up the DOM
+      // and scroll the first element that has a non-zero top.
+      let scrollTarget = response.selector;
+      while ($(scrollTarget).scrollTop() === 0 && $(scrollTarget).parent()) {
+        scrollTarget = $(scrollTarget).parent();
+      }
+
+      // Only scroll upward.
+      if (offset.top - 10 < $(scrollTarget).scrollTop()) {
+        scrollTarget.get(0).scrollTo({
+          top: offset.top - 10,
+          behavior: 'smooth',
+        });
+      }
     },
   };
 
