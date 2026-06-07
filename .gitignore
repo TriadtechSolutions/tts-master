@@ -10,7 +10,7 @@
 /web/themes/custom/tts/node_modules/
 /web/core/
 
-# Ignore environment files
+# Ignore environmstient files
 .env
 
 

@@ -22,6 +22,7 @@
         "drupal/core-project-message": "^10.5",
         "drupal/core-recommended": "^10.5",
         "drupal/devel": "^5.4",
+        "drupal/entity_reference_revisions": "^1.14",
         "drupal/fontawesome": "^2.26",
         "drupal/google_analytics": "^4.0",
         "drupal/metatag": "^2.2",
